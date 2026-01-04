@@ -58,25 +58,25 @@ const features = [
 
 export function FeaturesSection() {
   return (
-    <section className="py-20 md:py-32 relative overflow-hidden">
+    <section className="py-16 sm:py-20 md:py-32 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 -z-10 bg-muted/30" />
       <div className="absolute inset-0 -z-10 mesh-gradient opacity-50" />
       
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
+        <div className="text-center mb-10 sm:mb-16">
+          <p className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-wider mb-2 sm:mb-3">
             Why Choose Us
           </p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-3 sm:mb-4">
             Built for <span className="text-gradient">reliability</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto px-2">
             Every technical decision optimized for real-world scanning success.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-5">
           {features.map((feature, index) => (
             <Card 
               key={feature.title} 
@@ -86,12 +86,12 @@ export function FeaturesSection() {
               {/* Gradient overlay on hover */}
               <div className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
               
-              <CardContent className="relative p-6">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <feature.icon className="h-6 w-6 text-primary" strokeWidth={1.5} />
+              <CardContent className="relative p-4 sm:p-5 md:p-6">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-primary/10 flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <feature.icon className="h-5 w-5 sm:h-6 sm:w-6 text-primary" strokeWidth={1.5} />
                 </div>
-                <h3 className="font-semibold text-foreground text-lg mb-2">{feature.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
+                <h3 className="font-semibold text-foreground text-sm sm:text-base md:text-lg mb-1 sm:mb-2">{feature.title}</h3>
+                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed line-clamp-3 sm:line-clamp-none">{feature.description}</p>
               </CardContent>
             </Card>
           ))}

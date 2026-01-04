@@ -3,27 +3,27 @@ import Link from "next/link"
 
 export function Footer() {
   return (
-    <footer className="border-t border-border/50 py-16 bg-muted/20 relative overflow-hidden">
+    <footer className="border-t border-border/50 py-10 sm:py-16 bg-muted/20 relative overflow-hidden">
       {/* Subtle background */}
       <div className="absolute inset-0 -z-10 mesh-gradient opacity-30" />
       
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-5 gap-12 mb-12">
-          <div className="md:col-span-2">
-            <Link href="/" className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary to-primary/80 rounded-xl flex items-center justify-center shadow-lg shadow-primary/20">
-                <QrCode className="w-5 h-5 text-primary-foreground" />
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 sm:gap-12 mb-8 sm:mb-12">
+          <div className="col-span-2">
+            <Link href="/" className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-primary to-primary/80 rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg shadow-primary/20">
+                <QrCode className="w-4 h-4 sm:w-5 sm:h-5 text-primary-foreground" />
               </div>
-              <span className="font-semibold text-lg text-foreground">QR Generator</span>
+              <span className="font-semibold text-base sm:text-lg text-foreground">QR Generator</span>
             </Link>
-            <p className="text-sm text-muted-foreground max-w-sm leading-relaxed">
+            <p className="text-xs sm:text-sm text-muted-foreground max-w-sm leading-relaxed">
               Generate high-quality, print-safe QR codes for any use case. Built with precision and reliability in mind.
             </p>
           </div>
 
           <div>
-            <h4 className="font-semibold text-sm mb-4 text-foreground">QR Types</h4>
-            <ul className="space-y-3 text-sm text-muted-foreground">
+            <h4 className="font-semibold text-xs sm:text-sm mb-3 sm:mb-4 text-foreground">QR Types</h4>
+            <ul className="space-y-2 sm:space-y-3 text-xs sm:text-sm text-muted-foreground">
               <li>
                 <Link href="/#generator" className="hover:text-primary transition-colors">
                   URL
@@ -48,8 +48,8 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold text-sm mb-4 text-foreground">Industries</h4>
-            <ul className="space-y-3 text-sm text-muted-foreground">
+            <h4 className="font-semibold text-xs sm:text-sm mb-3 sm:mb-4 text-foreground">Industries</h4>
+            <ul className="space-y-2 sm:space-y-3 text-xs sm:text-sm text-muted-foreground">
               <li>
                 <Link href="/use-cases/retail-ecommerce" className="hover:text-primary transition-colors">
                   Retail & E-commerce
@@ -74,8 +74,8 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold text-sm mb-4 text-foreground">Resources</h4>
-            <ul className="space-y-3 text-sm text-muted-foreground">
+            <h4 className="font-semibold text-xs sm:text-sm mb-3 sm:mb-4 text-foreground">Resources</h4>
+            <ul className="space-y-2 sm:space-y-3 text-xs sm:text-sm text-muted-foreground">
               <li>
                 <Link href="/blog" className="hover:text-primary transition-colors">
                   Blog
@@ -96,9 +96,9 @@ export function Footer() {
         </div>
 
         {/* Technical specs bar */}
-        <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 py-6 px-4 rounded-2xl bg-card/60 border border-border/50 mb-8 text-xs text-muted-foreground">
-          <span className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-success" />
+        <div className="flex flex-wrap items-center justify-center gap-x-4 sm:gap-x-8 gap-y-2 sm:gap-y-3 py-4 sm:py-6 px-3 sm:px-4 rounded-xl sm:rounded-2xl bg-card/60 border border-border/50 mb-6 sm:mb-8 text-[10px] sm:text-xs text-muted-foreground">
+          <span className="flex items-center gap-1.5 sm:gap-2">
+            <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-success" />
             Error Correction: Level H
           </span>
           <span>Quiet Zone: 4 modules</span>
@@ -106,8 +106,8 @@ export function Footer() {
           <span>Formats: PNG, SVG</span>
         </div>
 
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
-          <p>Built for reliability. No tracking on free tier.</p>
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 text-[10px] sm:text-sm text-muted-foreground">
+          <p className="text-center sm:text-left">Built for reliability. No tracking on free tier.</p>
           <p>&copy; {new Date().getFullYear()} QR Generator. All rights reserved.</p>
         </div>
       </div>

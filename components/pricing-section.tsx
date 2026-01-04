@@ -65,35 +65,35 @@ const plans = [
 
 export function PricingSection() {
   return (
-    <section id="pricing" className="py-20 md:py-32 relative overflow-hidden">
+    <section id="pricing" className="py-16 sm:py-20 md:py-32 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 -z-10 bg-muted/30" />
       <div className="absolute inset-0 -z-10 mesh-gradient opacity-40" />
       
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-            <Sparkles className="h-4 w-4" />
+        <div className="text-center mb-10 sm:mb-16">
+          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-primary/10 text-primary text-xs sm:text-sm font-medium mb-3 sm:mb-4">
+            <Sparkles className="h-3 w-3 sm:h-4 sm:w-4" />
             Simple Pricing
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-3 sm:mb-4 px-2">
             Pay per QR code, <span className="text-gradient">not per month</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
             No subscriptions required. Buy what you need, when you need it. 
             Add analytics only if you want tracking.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-5xl mx-auto">
           {plans.map((plan, index) => (
             <Card
               key={plan.name}
               className={cn(
                 "relative flex flex-col overflow-hidden border-border/50 bg-card/80 backdrop-blur-sm transition-all duration-300",
                 plan.highlighted 
-                  ? "border-primary/50 shadow-2xl shadow-primary/10 scale-[1.02] md:scale-105" 
-                  : "hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-1",
+                  ? "border-primary/50 shadow-2xl shadow-primary/10 sm:scale-105 order-first sm:order-none" 
+                  : "hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 sm:hover:-translate-y-1",
               )}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
@@ -103,45 +103,45 @@ export function PricingSection() {
               )}
               
               {plan.badge && (
-                <Badge className="absolute top-4 right-4 px-3 py-1 bg-primary text-primary-foreground font-semibold shadow-lg">
+                <Badge className="absolute top-3 right-3 sm:top-4 sm:right-4 px-2 sm:px-3 py-0.5 sm:py-1 text-xs bg-primary text-primary-foreground font-semibold shadow-lg">
                   {plan.badge}
                 </Badge>
               )}
               
-              <CardContent className="relative p-8 flex flex-col h-full">
+              <CardContent className="relative p-5 sm:p-6 md:p-8 flex flex-col h-full">
                 {/* Icon */}
                 <div className={cn(
-                  "w-12 h-12 rounded-2xl flex items-center justify-center mb-6",
+                  "w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6",
                   plan.highlighted ? "bg-primary text-primary-foreground" : "bg-primary/10 text-primary"
                 )}>
-                  <plan.icon className="h-6 w-6" />
+                  <plan.icon className="h-5 w-5 sm:h-6 sm:w-6" />
                 </div>
                 
                 {/* Plan name & description */}
-                <h3 className="text-xl font-bold mb-1">{plan.name}</h3>
-                <p className="text-sm text-muted-foreground mb-4">{plan.description}</p>
+                <h3 className="text-lg sm:text-xl font-bold mb-1">{plan.name}</h3>
+                <p className="text-xs sm:text-sm text-muted-foreground mb-3 sm:mb-4">{plan.description}</p>
                 
                 {/* Price */}
-                <div className="mb-6">
-                  <span className="text-4xl font-bold">{plan.price}</span>
-                  <span className="text-muted-foreground ml-2">/{plan.period}</span>
+                <div className="mb-4 sm:mb-6">
+                  <span className="text-3xl sm:text-4xl font-bold">{plan.price}</span>
+                  <span className="text-muted-foreground text-sm ml-2">/{plan.period}</span>
                   {plan.savings && (
-                    <Badge variant="secondary" className="ml-3 text-xs bg-success/10 text-success border-success/20">
+                    <Badge variant="secondary" className="ml-2 sm:ml-3 text-[10px] sm:text-xs bg-success/10 text-success border-success/20">
                       Save {plan.savings}
                     </Badge>
                   )}
                 </div>
                 
                 {/* Features */}
-                <ul className="space-y-3 mb-8 flex-1">
+                <ul className="space-y-2 sm:space-y-3 mb-6 sm:mb-8 flex-1">
                   {plan.features.map((feature) => (
-                    <li key={feature} className="flex items-center gap-3 text-sm">
+                    <li key={feature} className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm">
                       <div className={cn(
-                        "w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0",
+                        "w-4 h-4 sm:w-5 sm:h-5 rounded-full flex items-center justify-center flex-shrink-0",
                         plan.highlighted ? "bg-primary/20" : "bg-muted"
                       )}>
                         <Check className={cn(
-                          "h-3 w-3",
+                          "h-2.5 w-2.5 sm:h-3 sm:w-3",
                           plan.highlighted ? "text-primary" : "text-muted-foreground"
                         )} />
                       </div>
@@ -153,7 +153,7 @@ export function PricingSection() {
                 {/* CTA */}
                 <Button 
                   className={cn(
-                    "w-full h-12 font-semibold rounded-xl transition-all duration-300",
+                    "w-full h-10 sm:h-12 font-semibold rounded-lg sm:rounded-xl transition-all duration-300 text-sm sm:text-base",
                     plan.highlighted 
                       ? "shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30" 
                       : ""
@@ -165,7 +165,7 @@ export function PricingSection() {
                 </Button>
                 
                 {plan.isSubscription && (
-                  <p className="text-xs text-muted-foreground text-center mt-3">
+                  <p className="text-[10px] sm:text-xs text-muted-foreground text-center mt-2 sm:mt-3">
                     Cancel anytime
                   </p>
                 )}
@@ -175,26 +175,26 @@ export function PricingSection() {
         </div>
 
         {/* Bundle callout */}
-        <div className="mt-12 max-w-2xl mx-auto">
+        <div className="mt-8 sm:mt-12 max-w-2xl mx-auto px-2">
           <Card className="border-border/50 bg-card/60 backdrop-blur-sm overflow-hidden">
-            <CardContent className="p-6 flex flex-col sm:flex-row items-center gap-4">
-              <div className="w-12 h-12 rounded-2xl bg-chart-4/10 flex items-center justify-center flex-shrink-0">
-                <Crown className="h-6 w-6 text-chart-4" />
+            <CardContent className="p-4 sm:p-6 flex flex-col sm:flex-row items-center gap-3 sm:gap-4">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-chart-4/10 flex items-center justify-center flex-shrink-0">
+                <Crown className="h-5 w-5 sm:h-6 sm:w-6 text-chart-4" />
               </div>
               <div className="flex-1 text-center sm:text-left">
-                <h4 className="font-semibold mb-1">Need more? We have bundles.</h4>
-                <p className="text-sm text-muted-foreground">
+                <h4 className="font-semibold text-sm sm:text-base mb-1">Need more? We have bundles.</h4>
+                <p className="text-xs sm:text-sm text-muted-foreground">
                   Business Pack: 25 QR codes for $49.99 (60% savings)
                 </p>
               </div>
-              <Button variant="outline" className="rounded-xl whitespace-nowrap">
+              <Button variant="outline" className="rounded-lg sm:rounded-xl whitespace-nowrap text-sm w-full sm:w-auto">
                 View All Packs
               </Button>
             </CardContent>
           </Card>
         </div>
 
-        <p className="text-center text-sm text-muted-foreground mt-8">
+        <p className="text-center text-xs sm:text-sm text-muted-foreground mt-6 sm:mt-8">
           Secure payments powered by Stripe. All prices in USD.
         </p>
       </div>
