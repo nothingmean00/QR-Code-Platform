@@ -1,0 +1,34 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="180" height="180" rx="37" fill="#0D9488"/>
+  <g transform="translate(30, 30)">
+    <!-- Top-left finder pattern -->
+    <rect x="10" y="10" width="35" height="35" rx="4" fill="white"/>
+    <rect x="17" y="17" width="21" height="21" rx="2" fill="#0D9488"/>
+    <rect x="24" y="24" width="7" height="7" fill="white"/>
+    
+    <!-- Top-right finder pattern -->
+    <rect x="75" y="10" width="35" height="35" rx="4" fill="white"/>
+    <rect x="82" y="17" width="21" height="21" rx="2" fill="#0D9488"/>
+    <rect x="89" y="24" width="7" height="7" fill="white"/>
+    
+    <!-- Bottom-left finder pattern -->
+    <rect x="10" y="75" width="35" height="35" rx="4" fill="white"/>
+    <rect x="17" y="82" width="21" height="21" rx="2" fill="#0D9488"/>
+    <rect x="24" y="89" width="7" height="7" fill="white"/>
+    
+    <!-- Data modules -->
+    <rect x="55" y="17" width="10" height="10" fill="white"/>
+    <rect x="55" y="37" width="10" height="10" fill="white"/>
+    <rect x="17" y="55" width="10" height="10" fill="white"/>
+    <rect x="37" y="55" width="10" height="10" fill="white"/>
+    <rect x="55" y="55" width="10" height="10" fill="white"/>
+    <rect x="75" y="55" width="10" height="10" fill="white"/>
+    <rect x="95" y="55" width="10" height="10" fill="white"/>
+    <rect x="55" y="75" width="10" height="10" fill="white"/>
+    <rect x="75" y="75" width="10" height="10" fill="white"/>
+    <rect x="55" y="95" width="10" height="10" fill="white"/>
+    <rect x="75" y="95" width="10" height="10" fill="white"/>
+    <rect x="95" y="95" width="10" height="10" fill="white"/>
+    <rect x="95" y="75" width="10" height="10" fill="white"/>
+  </g>
+</svg>
