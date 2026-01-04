@@ -72,7 +72,7 @@ So if someone will scan from 10 feet away, your QR code needs to be at least 1 f
 We use Level H by default for maximum reliability.
     `,
     author: "QR Generator Team",
-    publishedAt: "2024-12-15",
+    publishedAt: "2025-12-15",
     readTime: 5,
     category: "Guides",
     tags: ["print", "sizing", "best practices"],
@@ -80,7 +80,7 @@ We use Level H by default for maximum reliability.
   },
   {
     slug: "restaurant-qr-code-menu-guide",
-    title: "How to Create a QR Code Menu for Your Restaurant (2024 Guide)",
+    title: "How to Create a QR Code Menu for Your Restaurant (2026 Guide)",
     excerpt: "Step-by-step guide to creating digital menus with QR codes. Includes placement tips, design best practices, and common pitfalls to avoid.",
     content: `
 ## Why QR Code Menus?
@@ -139,7 +139,7 @@ Include:
 - Update your menu URL to track visits in analytics
     `,
     author: "QR Generator Team",
-    publishedAt: "2024-12-10",
+    publishedAt: "2025-12-10",
     readTime: 7,
     category: "Industry",
     tags: ["restaurants", "menus", "hospitality"]
@@ -206,7 +206,7 @@ If space is extremely limited and conditions are perfect, Level M may work. But 
 **Always use Level H** unless you have a specific reason not to. The slight size increase is worth the reliability.
     `,
     author: "QR Generator Team",
-    publishedAt: "2024-12-05",
+    publishedAt: "2025-11-28",
     readTime: 4,
     category: "Technical",
     tags: ["error correction", "technical", "reliability"]
@@ -230,7 +230,7 @@ If you're using QR codes for marketing, you need to know:
 Add tracking parameters to your URL:
 
 \`\`\`
-https://yoursite.com/landing?utm_source=flyer&utm_medium=qr&utm_campaign=spring2024
+https://yoursite.com/landing?utm_source=flyer&utm_medium=qr&utm_campaign=spring2026
 \`\`\`
 
 Then view results in Google Analytics under Acquisition > Campaigns.
@@ -293,7 +293,7 @@ Create two versions of your print material with different QR codes pointing to:
 Compare scan rates to optimize your design and placement.
     `,
     author: "QR Generator Team",
-    publishedAt: "2024-11-28",
+    publishedAt: "2025-11-20",
     readTime: 6,
     category: "Marketing",
     tags: ["analytics", "tracking", "marketing"]
@@ -374,7 +374,7 @@ We generate static QR codes because:
 For dynamic functionality, use a URL shortener you control (like Bitly) and encode that short URL in your QR code.
     `,
     author: "QR Generator Team",
-    publishedAt: "2024-11-20",
+    publishedAt: "2026-01-02",
     readTime: 5,
     category: "Guides",
     tags: ["static", "dynamic", "comparison"]

@@ -23,11 +23,16 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 })
 
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://qr-generator.com'
+
 export const metadata: Metadata = {
-  title: "QR Code Generator | Print-Safe, Professional QR Codes",
+  metadataBase: new URL(BASE_URL),
+  title: {
+    default: "QR Code Generator | Print-Safe, Professional QR Codes",
+    template: "%s | QR Generator"
+  },
   description:
     "Generate high-quality, print-safe QR codes for URLs, WiFi, vCards, and more. Free downloads, no account required. SVG & PDF exports available.",
-  generator: "v0.app",
   keywords: [
     "QR code",
     "QR generator",
@@ -36,11 +41,34 @@ export const metadata: Metadata = {
     "WiFi QR code",
     "vCard QR code",
     "free QR code",
+    "QR code maker",
+    "create QR code",
   ],
+  authors: [{ name: "QR Generator" }],
+  creator: "QR Generator",
+  publisher: "QR Generator",
   openGraph: {
     title: "QR Code Generator | Print-Safe, Professional QR Codes",
     description: "Generate high-quality, print-safe QR codes. Free downloads, no account required.",
     type: "website",
+    siteName: "QR Generator",
+    url: BASE_URL,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "QR Code Generator | Print-Safe, Professional QR Codes",
+    description: "Generate high-quality, print-safe QR codes. Free downloads, no account required.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
   icons: {
     icon: [

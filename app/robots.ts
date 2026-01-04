@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next'
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://qr-generator.example.com'
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://qr-generator.com'
 
 export default function robots(): MetadataRoute.Robots {
   return {
