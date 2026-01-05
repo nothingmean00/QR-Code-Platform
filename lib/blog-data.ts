@@ -9,6 +9,7 @@ export interface BlogPost {
   category: string
   tags: string[]
   featured?: boolean
+  image?: string
 }
 
 export const BLOG_POSTS: BlogPost[] = [
@@ -145,7 +146,8 @@ Error correction allows QR codes to scan even when partially damaged. We use Lev
     readTime: 8,
     category: "Guides",
     tags: ["print", "sizing", "best practices", "design"],
-    featured: true
+    featured: true,
+    image: "/blog/qr-size-guide-hero.png"
   },
   {
     slug: "restaurant-qr-code-menu-guide",

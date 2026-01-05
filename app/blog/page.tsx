@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import Image from "next/image"
 import { BLOG_POSTS, formatDate } from "@/lib/blog-data"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
@@ -130,41 +131,50 @@ export default function BlogPage() {
             >
               <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
               
-              <div className="relative p-8 md:p-12">
-                <div className="flex flex-wrap items-center gap-3 mb-6">
-                  <Badge className="bg-primary text-primary-foreground">
-                    Featured
-                  </Badge>
-                  <Badge variant="outline">
-                    {featuredPost.category}
-                  </Badge>
-                </div>
+              <div className="relative grid md:grid-cols-2 gap-6">
+                {featuredPost.image && (
+                  <div className="relative aspect-[16/10] md:aspect-auto md:h-full overflow-hidden">
+                    <img
+                      src={featuredPost.image}
+                      alt={featuredPost.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent to-card/80 hidden md:block" />
+                  </div>
+                )}
                 
-                <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 group-hover:text-primary transition-colors">
-                  {featuredPost.title}
-                </h3>
-                
-                <p className="text-lg text-muted-foreground mb-6 max-w-3xl leading-relaxed">
-                  {featuredPost.excerpt}
-                </p>
-                
-                <div className="flex flex-wrap items-center justify-between gap-4">
-                  <div className="flex items-center gap-6 text-sm text-muted-foreground">
-                    <span>{formatDate(featuredPost.publishedAt)}</span>
-                    <span className="flex items-center gap-1.5">
-                      <Clock className="h-4 w-4" />
-                      {featuredPost.readTime} min read
-                    </span>
-                    <span className="flex items-center gap-1.5">
-                      <BookOpen className="h-4 w-4" />
-                      {featuredPost.content.split(/\s+/).length.toLocaleString()} words
-                    </span>
+                <div className="p-8 md:p-12 md:pl-0 flex flex-col justify-center">
+                  <div className="flex flex-wrap items-center gap-3 mb-6">
+                    <Badge className="bg-primary text-primary-foreground">
+                      Featured
+                    </Badge>
+                    <Badge variant="outline">
+                      {featuredPost.category}
+                    </Badge>
                   </div>
                   
-                  <span className="text-primary font-medium flex items-center gap-2 group-hover:gap-3 transition-all">
-                    Read full article
-                    <ArrowRight className="h-4 w-4" />
-                  </span>
+                  <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 group-hover:text-primary transition-colors">
+                    {featuredPost.title}
+                  </h3>
+                  
+                  <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                    {featuredPost.excerpt}
+                  </p>
+                  
+                  <div className="flex flex-wrap items-center justify-between gap-4">
+                    <div className="flex items-center gap-6 text-sm text-muted-foreground">
+                      <span>{formatDate(featuredPost.publishedAt)}</span>
+                      <span className="flex items-center gap-1.5">
+                        <Clock className="h-4 w-4" />
+                        {featuredPost.readTime} min read
+                      </span>
+                    </div>
+                    
+                    <span className="text-primary font-medium flex items-center gap-2 group-hover:gap-3 transition-all">
+                      Read full article
+                      <ArrowRight className="h-4 w-4" />
+                    </span>
+                  </div>
                 </div>
               </div>
             </Link>
@@ -186,33 +196,45 @@ export default function BlogPage() {
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="group flex flex-col p-6 rounded-2xl border border-border bg-card hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
+                className="group flex flex-col rounded-2xl border border-border bg-card hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 overflow-hidden"
                 style={{ animationDelay: `${index * 50}ms` }}
               >
-                <div className="flex items-center gap-2 mb-4">
-                  <Badge variant="outline" className="text-xs font-medium">
-                    {post.category}
-                  </Badge>
-                </div>
+                {post.image && (
+                  <div className="relative aspect-[16/9] overflow-hidden">
+                    <img
+                      src={post.image}
+                      alt={post.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                )}
                 
-                <h3 className="text-lg font-semibold mb-3 group-hover:text-primary transition-colors line-clamp-2">
-                  {post.title}
-                </h3>
-                
-                <p className="text-sm text-muted-foreground mb-6 line-clamp-3 flex-1 leading-relaxed">
-                  {post.excerpt}
-                </p>
-                
-                <div className="flex items-center justify-between pt-4 border-t border-border">
-                  <div className="flex items-center gap-4 text-xs text-muted-foreground">
-                    <span>{formatDate(post.publishedAt)}</span>
-                    <span className="flex items-center gap-1">
-                      <Clock className="h-3 w-3" />
-                      {post.readTime} min
-                    </span>
+                <div className="p-6 flex flex-col flex-1">
+                  <div className="flex items-center gap-2 mb-4">
+                    <Badge variant="outline" className="text-xs font-medium">
+                      {post.category}
+                    </Badge>
                   </div>
                   
-                  <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
+                  <h3 className="text-lg font-semibold mb-3 group-hover:text-primary transition-colors line-clamp-2">
+                    {post.title}
+                  </h3>
+                  
+                  <p className="text-sm text-muted-foreground mb-6 line-clamp-3 flex-1 leading-relaxed">
+                    {post.excerpt}
+                  </p>
+                  
+                  <div className="flex items-center justify-between pt-4 border-t border-border">
+                    <div className="flex items-center gap-4 text-xs text-muted-foreground">
+                      <span>{formatDate(post.publishedAt)}</span>
+                      <span className="flex items-center gap-1">
+                        <Clock className="h-3 w-3" />
+                        {post.readTime} min
+                      </span>
+                    </div>
+                    
+                    <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
+                  </div>
                 </div>
               </Link>
             ))}
