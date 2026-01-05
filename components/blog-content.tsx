@@ -133,8 +133,10 @@ export function BlogContent({ content }: BlogContentProps) {
             <figure className="my-8">
               <img 
                 src={src} 
-                alt={alt || ''} 
+                alt={alt || 'QR Code Guide Illustration'} 
                 className="rounded-xl border border-border w-full"
+                loading="lazy"
+                decoding="async"
               />
               {alt && (
                 <figcaption className="text-center text-sm text-muted-foreground mt-3">

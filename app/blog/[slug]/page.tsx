@@ -28,10 +28,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return { title: "Post Not Found" }
   }
 
+  const ogImage = post.image || "/og-image.png"
+  
   return {
     title: `${post.title} | QR Code Blog`,
     description: post.excerpt,
     keywords: post.tags,
+    authors: [{ name: post.author }],
     alternates: {
       canonical: `${BASE_URL}/blog/${slug}`,
     },
@@ -40,13 +43,16 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description: post.excerpt,
       type: "article",
       publishedTime: post.publishedAt,
+      authors: [post.author],
+      section: post.category,
+      tags: post.tags,
       url: `${BASE_URL}/blog/${slug}`,
       images: [
         {
-          url: "/og-image.png",
+          url: ogImage,
           width: 1200,
           height: 630,
-          alt: post.title,
+          alt: `${post.title} - QR Code Guide`,
         },
       ],
     },
@@ -54,7 +60,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       card: "summary_large_image",
       title: post.title,
       description: post.excerpt,
-      images: ["/og-image.png"],
+      images: [ogImage],
     },
   }
 }
@@ -70,6 +76,8 @@ export default async function BlogPostPage({ params }: PageProps) {
   const relatedPosts = getRecentPosts(4).filter(p => p.slug !== slug).slice(0, 3)
 
   // JSON-LD Article Schema with BreadcrumbList
+  const postImage = post.image ? `${BASE_URL}${post.image}` : `${BASE_URL}/og-image.png`
+  
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -77,9 +85,14 @@ export default async function BlogPostPage({ params }: PageProps) {
         "@type": "Article",
         "headline": post.title,
         "description": post.excerpt,
-        "image": `${BASE_URL}/og-image.png`,
+        "image": {
+          "@type": "ImageObject",
+          "url": postImage,
+          "width": 1200,
+          "height": 630
+        },
         "author": {
-          "@type": "Organization",
+          "@type": "Person",
           "name": post.author,
           "url": BASE_URL
         },

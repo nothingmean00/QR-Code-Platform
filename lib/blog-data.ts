@@ -18,7 +18,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "QR Code Size Guide: How Big Should Your QR Code Be for Print?",
     excerpt: "Learn the optimal QR code sizes for business cards, posters, billboards, and packaging. Avoid the #1 mistake that makes QR codes unscannable.",
     content: `
-![QR Code Size Guide Hero](/blog/qr-size-guide-hero.png)
+![QR Code Size Guide - Print sizes for business cards, posters, and billboards](/blog/qr-size-guide-hero.png)
 
 ## The Golden Rule of QR Code Sizing
 
@@ -28,7 +28,7 @@ The minimum size for a QR code depends on the scanning distance. Here's the simp
 
 So if someone will scan from 10 feet away, your QR code needs to be at least 1 foot (12 inches) wide. This rule accounts for camera resolution, lighting conditions, and user error.
 
-![Scanning Distance Visual](/blog/qr-size-guide-scanning.png)
+![QR code scanning distance diagram showing optimal range for different print sizes](/blog/qr-size-guide-scanning.png)
 
 ## Why Size Matters More Than You Think
 
@@ -120,7 +120,7 @@ Error correction allows QR codes to scan even when partially damaged. We use Lev
 
 ## Quick Reference Chart
 
-![Size Comparison Diagram](/blog/qr-size-guide-comparison.png)
+![QR code size comparison chart - minimum and recommended sizes for different applications](/blog/qr-size-guide-comparison.png)
 
 | Application | Min Size | Recommended | Max Distance |
 |------------|----------|-------------|--------------|
@@ -154,7 +154,7 @@ Error correction allows QR codes to scan even when partially damaged. We use Lev
     title: "How to Create a QR Code Menu for Your Restaurant (Complete 2026 Guide)",
     excerpt: "Step-by-step guide to creating digital menus with QR codes. Includes placement tips, design templates, and the mistakes that cost restaurants customers.",
     content: `
-![Restaurant QR Code Menu Guide](/blog/restaurant-menu-hero.png)
+![Restaurant QR code menu setup on table with digital menu display](/blog/restaurant-menu-hero.png)
 
 ## Why Every Restaurant Needs QR Code Menus in 2026
 
@@ -215,7 +215,7 @@ You have several options, each with trade-offs:
 - Minimize fancy animations
 - Test on older phones, not just your latest iPhone
 
-![Mobile Menu Mockup](/blog/restaurant-menu-mobile.png)
+![Mobile-optimized restaurant menu displayed on smartphone screen](/blog/restaurant-menu-mobile.png)
 
 ## Step 3: Generate Your QR Code
 
@@ -262,7 +262,7 @@ You have several options, each with trade-offs:
 - Keep away from candles (fire hazard with paper)
 - Test scanning from all seated positions
 
-![Table Placement Examples](/blog/restaurant-menu-placement.png)
+![QR code placement examples on restaurant tables, menus, and table tents](/blog/restaurant-menu-placement.png)
 
 ## Common Mistakes That Cost You Customers
 
@@ -334,7 +334,7 @@ Track these metrics monthly:
     title: "QR Code Error Correction: The Technical Guide to Reliable Scanning",
     excerpt: "Understanding error correction levels (L, M, Q, H) and how they affect your QR code's reliability, size, and real-world performance.",
     content: `
-![QR Code Error Correction Guide](/blog/error-correction-hero.png)
+![QR code error correction levels L M Q H comparison showing damage tolerance](/blog/error-correction-hero.png)
 
 ## What is Error Correction?
 
@@ -421,7 +421,7 @@ QR codes use Reed-Solomon error correction, the same algorithm used in CDs and D
 - Works through dirt, scratches, folds
 - Handles partial obstruction (fingers, stickers)
 
-![Error Correction Levels Comparison](/blog/error-correction-levels.png)
+![Visual comparison of QR code error correction levels L, M, Q, and H with recovery percentages](/blog/error-correction-levels.png)
 
 ## Visual Size Comparison
 
@@ -504,7 +504,7 @@ We tested QR codes in various conditions:
 | Partial cover (10%) | ❌ 0% | ❌ 0% | ⚠️ 78% | ✅ 100% |
 | Sun faded (6 mo) | ❌ 31% | ⚠️ 56% | ✅ 84% | ✅ 96% |
 
-![Durability Test Results](/blog/error-correction-durability.png)
+![QR code durability test showing scan success rates under different damage conditions](/blog/error-correction-durability.png)
 
 ## The Bottom Line
 
@@ -526,7 +526,7 @@ We tested QR codes in various conditions:
     title: "How to Track QR Code Scans: Complete Guide to QR Analytics in 2026",
     excerpt: "Learn how to measure QR code performance with scan tracking, UTM parameters, and analytics integration. Make data-driven decisions about your campaigns.",
     content: `
-![QR Code Tracking & Analytics](/blog/tracking-hero.png)
+![QR code analytics dashboard showing scan tracking data and geographic insights](/blog/tracking-hero.png)
 
 ## Why QR Code Tracking Matters
 
@@ -581,7 +581,7 @@ https://yoursite.com/landing?utm_source=flyer&utm_medium=qr&utm_campaign=spring2
 - Requires Google Analytics setup
 - Can't track repeat vs. new scanners
 
-![UTM Tracking Diagram](/blog/tracking-utm-diagram.png)
+![UTM parameter tracking flowchart for QR code campaign attribution](/blog/tracking-utm-diagram.png)
 
 ## Method 2: URL Shorteners with Analytics
 
@@ -632,7 +632,7 @@ Purpose-built QR code platforms (like our Analytics subscription) provide the mo
 - Heat maps of scan locations
 - Radius filtering
 
-![Scan Map Visualization](/blog/tracking-scan-map.png)
+![World map showing QR code scan locations with heat map visualization](/blog/tracking-scan-map.png)
 
 **Device Intelligence:**
 - iOS vs. Android breakdown
@@ -777,7 +777,7 @@ Be transparent about tracking:
     title: "Dynamic vs Static QR Codes: Which Should You Use? (Decision Guide)",
     excerpt: "Understand the difference between static and dynamic QR codes. Learn when each type makes sense and how to choose the right one for your business.",
     content: `
-![Dynamic vs Static QR Codes](/blog/dynamic-static-hero.png)
+![Dynamic versus static QR codes comparison showing editable vs permanent codes](/blog/dynamic-static-hero.png)
 
 ## The Fundamental Difference
 
@@ -902,7 +902,7 @@ Scans are logged and tracked.
 | Event materials | Update schedules, venues |
 | A/B testing | Test different landing pages |
 
-![Use Case Icons](/blog/dynamic-static-use-cases.png)
+![QR code use case icons for WiFi, vCard, URL, analytics, and marketing applications](/blog/dynamic-static-use-cases.png)
 
 ## Decision Framework
 
@@ -932,7 +932,7 @@ Ask yourself these questions:
 - **100-1000 units** → Consider dynamic
 - **> 1000 units** → Dynamic strongly recommended
 
-![Comparison Infographic](/blog/dynamic-static-comparison.png)
+![Side-by-side infographic comparing static and dynamic QR code features and benefits](/blog/dynamic-static-comparison.png)
 
 ## Hybrid Approach: Best of Both
 
@@ -1019,7 +1019,7 @@ If you want static codes with some flexibility, try this approach:
     title: "How to Create a WiFi QR Code: Share Your Network Instantly",
     excerpt: "Create a QR code that connects guests to your WiFi automatically. Perfect for homes, offices, restaurants, and events. No more spelling out passwords.",
     content: `
-![WiFi QR Code Guide](/blog/wifi-hero.png)
+![WiFi QR code allowing instant network connection without typing passwords](/blog/wifi-hero.png)
 
 ## Why WiFi QR Codes Are Brilliant
 
@@ -1107,7 +1107,7 @@ The phone then auto-fills the connection dialog. On most devices, one tap connec
 - Include in welcome packets
 - Separate guest network recommended
 
-![Office WiFi QR Code Setup](/blog/wifi-office.png)
+![WiFi QR code displayed in modern office or cafe setting for guest network access](/blog/wifi-office.png)
 
 **For Restaurants/Cafes:**
 - Include on table tents (combine with menu QR)
@@ -1140,7 +1140,7 @@ The phone then auto-fills the connection dialog. On most devices, one tap connec
 - Some very old phones don't support WiFi QR
 - Having password written as backup is wise
 
-![Device Compatibility](/blog/wifi-devices.png)
+![iPhone and Android smartphones scanning WiFi QR code showing compatibility](/blog/wifi-devices.png)
 
 ## Common Issues and Fixes
 
@@ -1224,7 +1224,7 @@ Set a calendar reminder to update WiFi QR codes whenever you change passwords. O
     title: "vCard QR Codes: The Modern Business Card Strategy",
     excerpt: "Add a vCard QR code to your business cards and let contacts save your info with one scan. Learn best practices, design tips, and common mistakes.",
     content: `
-![vCard QR Codes for Business Cards](/blog/vcard-hero.png)
+![Premium business card with vCard QR code for instant contact saving](/blog/vcard-hero.png)
 
 ## Why vCard QR Codes Beat Traditional Business Cards
 
@@ -1338,7 +1338,7 @@ Include text near the QR code:
 [Back: Full contact info + social]
 \`\`\`
 
-![Business Card Design Layouts](/blog/vcard-card-design.png)
+![Business card design layouts showing QR code placement options front and back](/blog/vcard-card-design.png)
 
 ## Common vCard Mistakes
 
@@ -1397,7 +1397,7 @@ You can't track vCard scans directly (it's offline), but you can:
 - Monitor LinkedIn connection requests after events
 - Ask "Did you scan my card?" in follow-ups
 
-![Contact Save Animation](/blog/vcard-contact-save.png)
+![Smartphone screen showing contact being saved automatically from vCard QR scan](/blog/vcard-contact-save.png)
 
 ### Event-Specific Cards
 For conferences or specific events:
@@ -1442,7 +1442,7 @@ Modern professionals often use both:
     title: "QR Codes in Marketing: 15 Campaign Ideas That Actually Work",
     excerpt: "Real-world QR code marketing examples that drive results. From product packaging to billboards, learn what works and what flops.",
     content: `
-![QR Codes in Marketing Campaigns](/blog/marketing-hero.png)
+![QR codes used in marketing campaigns on packaging, posters, and retail displays](/blog/marketing-hero.png)
 
 ## Why QR Codes Are Marketing Gold in 2026
 
@@ -1531,7 +1531,7 @@ The reason? Smartphones made them frictionless. No app needed—just point and s
 
 **Pro tip:** Offer extended warranty as incentive.
 
-![Product Packaging Example](/blog/marketing-packaging.png)
+![QR code integrated into product packaging for warranty registration and product info](/blog/marketing-packaging.png)
 
 ### 10. Billboards → Campaign Microsite
 **How it works:** Billboard includes QR code.
@@ -1581,7 +1581,7 @@ The reason? Smartphones made them frictionless. No app needed—just point and s
 
 **Pro tip:** Track common scans to improve product documentation.
 
-![Retail Display Example](/blog/marketing-retail.png)
+![QR code on retail store display for product information and customer engagement](/blog/marketing-retail.png)
 
 ## What Makes QR Campaigns Work
 
@@ -1658,7 +1658,7 @@ Start with one campaign. Test it. Learn from it. Scale what works.
     title: "QR Code Security: How to Stay Safe and Protect Your Business",
     excerpt: "Learn about QR code security risks and how to protect yourself from malicious codes. Essential reading for businesses and consumers.",
     content: `
-![QR Code Security Guide](/blog/security-hero.png)
+![QR code security guide showing protection shield and safe scanning practices](/blog/security-hero.png)
 
 ## The Rise of QR Code Security Concerns
 
@@ -1696,7 +1696,7 @@ As QR codes become ubiquitous, so do attempts to exploit them. Understanding the
 - QR code that doesn't match the brand
 - Poorly aligned placement
 
-![Phishing Warning Visual](/blog/security-phishing.png)
+![Warning visual showing malicious QR code overlay attack versus legitimate code](/blog/security-phishing.png)
 
 ### 4. WiFi Credential Theft
 **How it works:** Malicious WiFi QR connects you to attacker's network.
@@ -1813,7 +1813,7 @@ As QR codes become ubiquitous, so do attempts to exploit them. Understanding the
 | Monitor codes for tampering | Set and forget QR campaigns |
 | Use recognizable domains | Link to unexpected destinations |
 
-![Safety Checklist](/blog/security-checklist.png)
+![QR code safety checklist infographic with security best practices for consumers and businesses](/blog/security-checklist.png)
 
 ## What Makes Our QR Codes Safe
 

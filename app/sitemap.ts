@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next'
 import { getAllUseCaseSlugs } from '@/lib/use-cases-data'
-import { getAllBlogSlugs } from '@/lib/blog-data'
+import { getAllBlogSlugs, getBlogPostBySlug } from '@/lib/blog-data'
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://qr-generator.com'
 
@@ -15,12 +15,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }))
 
-  const blogPages = blogSlugs.map((slug) => ({
-    url: `${BASE_URL}/blog/${slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: 0.7,
-  }))
+  const blogPages = blogSlugs.map((slug) => {
+    const post = getBlogPostBySlug(slug)
+    return {
+      url: `${BASE_URL}/blog/${slug}`,
+      lastModified: new Date(post?.publishedAt || new Date()),
+      changeFrequency: 'weekly' as const,
+      priority: 0.7,
+      images: post?.image ? [`${BASE_URL}${post.image}`] : [],
+    }
+  })
 
   return [
     {
