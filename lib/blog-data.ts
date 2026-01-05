@@ -1442,6 +1442,8 @@ Modern professionals often use both:
     title: "QR Codes in Marketing: 15 Campaign Ideas That Actually Work",
     excerpt: "Real-world QR code marketing examples that drive results. From product packaging to billboards, learn what works and what flops.",
     content: `
+![QR Codes in Marketing Campaigns](/blog/marketing-hero.png)
+
 ## Why QR Codes Are Marketing Gold in 2026
 
 After years of being dismissed as outdated, QR codes have become essential marketing tools:
@@ -1529,6 +1531,8 @@ The reason? Smartphones made them frictionless. No app needed—just point and s
 
 **Pro tip:** Offer extended warranty as incentive.
 
+![Product Packaging Example](/blog/marketing-packaging.png)
+
 ### 10. Billboards → Campaign Microsite
 **How it works:** Billboard includes QR code.
 **Link to:** Campaign-specific landing page.
@@ -1576,6 +1580,8 @@ The reason? Smartphones made them frictionless. No app needed—just point and s
 **Why it works:** Reduces support calls. Helps customers faster.
 
 **Pro tip:** Track common scans to improve product documentation.
+
+![Retail Display Example](/blog/marketing-retail.png)
 
 ## What Makes QR Campaigns Work
 
@@ -1644,7 +1650,8 @@ Start with one campaign. Test it. Learn from it. Scale what works.
     publishedAt: "2025-11-15",
     readTime: 14,
     category: "Marketing",
-    tags: ["marketing", "campaigns", "advertising", "case studies"]
+    tags: ["marketing", "campaigns", "advertising", "case studies"],
+    image: "/blog/marketing-hero.png"
   },
   {
     slug: "qr-code-security-safety",
