@@ -1658,6 +1658,8 @@ Start with one campaign. Test it. Learn from it. Scale what works.
     title: "QR Code Security: How to Stay Safe and Protect Your Business",
     excerpt: "Learn about QR code security risks and how to protect yourself from malicious codes. Essential reading for businesses and consumers.",
     content: `
+![QR Code Security Guide](/blog/security-hero.png)
+
 ## The Rise of QR Code Security Concerns
 
 As QR codes become ubiquitous, so do attempts to exploit them. Understanding the risks helps you use QR codes safely and protect your customers.
@@ -1693,6 +1695,8 @@ As QR codes become ubiquitous, so do attempts to exploit them. Understanding the
 - Sticker that looks added on top
 - QR code that doesn't match the brand
 - Poorly aligned placement
+
+![Phishing Warning Visual](/blog/security-phishing.png)
 
 ### 4. WiFi Credential Theft
 **How it works:** Malicious WiFi QR connects you to attacker's network.
@@ -1809,6 +1813,8 @@ As QR codes become ubiquitous, so do attempts to exploit them. Understanding the
 | Monitor codes for tampering | Set and forget QR campaigns |
 | Use recognizable domains | Link to unexpected destinations |
 
+![Safety Checklist](/blog/security-checklist.png)
+
 ## What Makes Our QR Codes Safe
 
 **Direct encoding:**
@@ -1856,7 +1862,8 @@ QR codes are safe when used correctly. The technology isn't the problem—social
     publishedAt: "2025-11-05",
     readTime: 10,
     category: "Security",
-    tags: ["security", "safety", "phishing", "best practices"]
+    tags: ["security", "safety", "phishing", "best practices"],
+    image: "/blog/security-hero.png"
   }
 ]
 
