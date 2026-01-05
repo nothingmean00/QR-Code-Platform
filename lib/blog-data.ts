@@ -334,6 +334,8 @@ Track these metrics monthly:
     title: "QR Code Error Correction: The Technical Guide to Reliable Scanning",
     excerpt: "Understanding error correction levels (L, M, Q, H) and how they affect your QR code's reliability, size, and real-world performance.",
     content: `
+![QR Code Error Correction Guide](/blog/error-correction-hero.png)
+
 ## What is Error Correction?
 
 QR codes contain redundant data that allows them to be scanned even when partially damaged, dirty, or obscured. This is called error correction, and it's what makes QR codes so reliable in the real world.
@@ -419,6 +421,8 @@ QR codes use Reed-Solomon error correction, the same algorithm used in CDs and D
 - Works through dirt, scratches, folds
 - Handles partial obstruction (fingers, stickers)
 
+![Error Correction Levels Comparison](/blog/error-correction-levels.png)
+
 ## Visual Size Comparison
 
 Encoding the same URL at each level produces different sized codes:
@@ -500,6 +504,8 @@ We tested QR codes in various conditions:
 | Partial cover (10%) | ❌ 0% | ❌ 0% | ⚠️ 78% | ✅ 100% |
 | Sun faded (6 mo) | ❌ 31% | ⚠️ 56% | ✅ 84% | ✅ 96% |
 
+![Durability Test Results](/blog/error-correction-durability.png)
+
 ## The Bottom Line
 
 **For digital display only:** Level M is fine, Level L if size is critical.
@@ -512,7 +518,8 @@ We tested QR codes in various conditions:
     publishedAt: "2025-12-20",
     readTime: 9,
     category: "Technical",
-    tags: ["error correction", "technical", "reliability", "scanning"]
+    tags: ["error correction", "technical", "reliability", "scanning"],
+    image: "/blog/error-correction-hero.png"
   },
   {
     slug: "qr-code-tracking-analytics",
