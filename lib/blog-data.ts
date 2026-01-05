@@ -1224,6 +1224,8 @@ Set a calendar reminder to update WiFi QR codes whenever you change passwords. O
     title: "vCard QR Codes: The Modern Business Card Strategy",
     excerpt: "Add a vCard QR code to your business cards and let contacts save your info with one scan. Learn best practices, design tips, and common mistakes.",
     content: `
+![vCard QR Codes for Business Cards](/blog/vcard-hero.png)
+
 ## Why vCard QR Codes Beat Traditional Business Cards
 
 The traditional business card flow:
@@ -1336,6 +1338,8 @@ Include text near the QR code:
 [Back: Full contact info + social]
 \`\`\`
 
+![Business Card Design Layouts](/blog/vcard-card-design.png)
+
 ## Common vCard Mistakes
 
 ### Mistake 1: Too Much Data
@@ -1393,6 +1397,8 @@ You can't track vCard scans directly (it's offline), but you can:
 - Monitor LinkedIn connection requests after events
 - Ask "Did you scan my card?" in follow-ups
 
+![Contact Save Animation](/blog/vcard-contact-save.png)
+
 ### Event-Specific Cards
 For conferences or specific events:
 - Add event name to title temporarily
@@ -1428,7 +1434,8 @@ Modern professionals often use both:
     publishedAt: "2025-11-30",
     readTime: 9,
     category: "Tutorials",
-    tags: ["vCard", "business cards", "networking", "contact"]
+    tags: ["vCard", "business cards", "networking", "contact"],
+    image: "/blog/vcard-hero.png"
   },
   {
     slug: "qr-code-marketing-campaigns",
