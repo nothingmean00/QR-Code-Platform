@@ -777,6 +777,8 @@ Be transparent about tracking:
     title: "Dynamic vs Static QR Codes: Which Should You Use? (Decision Guide)",
     excerpt: "Understand the difference between static and dynamic QR codes. Learn when each type makes sense and how to choose the right one for your business.",
     content: `
+![Dynamic vs Static QR Codes](/blog/dynamic-static-hero.png)
+
 ## The Fundamental Difference
 
 **Static QR Code:** The destination is encoded directly in the pattern. It can never be changed.
@@ -900,6 +902,8 @@ Scans are logged and tracked.
 | Event materials | Update schedules, venues |
 | A/B testing | Test different landing pages |
 
+![Use Case Icons](/blog/dynamic-static-use-cases.png)
+
 ## Decision Framework
 
 Ask yourself these questions:
@@ -927,6 +931,8 @@ Ask yourself these questions:
 - **< 100 units** → Static (easy to reprint)
 - **100-1000 units** → Consider dynamic
 - **> 1000 units** → Dynamic strongly recommended
+
+![Comparison Infographic](/blog/dynamic-static-comparison.png)
 
 ## Hybrid Approach: Best of Both
 
@@ -1005,7 +1011,8 @@ If you want static codes with some flexibility, try this approach:
     publishedAt: "2026-01-02",
     readTime: 10,
     category: "Guides",
-    tags: ["static", "dynamic", "comparison", "business"]
+    tags: ["static", "dynamic", "comparison", "business"],
+    image: "/blog/dynamic-static-hero.png"
   },
   {
     slug: "wifi-qr-code-guide",
