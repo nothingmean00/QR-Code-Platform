@@ -78,11 +78,6 @@ const fieldsIncluded = [
   { icon: Globe, label: "Website & LinkedIn" },
 ]
 
-const stats = [
-  { value: "88%", label: "of business cards thrown away within a week" },
-  { value: "10x", label: "more likely to search digital contacts" },
-  { value: "40%+", label: "save rate with vCard QR vs 5% traditional" },
-]
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -170,21 +165,6 @@ export default function VCardQRCodeGenerator() {
           </div>
         </section>
 
-        {/* Stats Section */}
-        <section className="py-16 bg-muted/30 border-y border-border">
-          <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto text-center">
-              {stats.map((stat, i) => (
-                <div key={i}>
-                  <div className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-purple-500 mb-2">
-                    {stat.value}
-                  </div>
-                  <p className="text-muted-foreground">{stat.label}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* Features Section */}
         <section className="py-20">

@@ -47,8 +47,8 @@ export const metadata: Metadata = {
 const benefits = [
   {
     icon: TrendingUp,
-    title: "70% More Reviews",
-    description: "Businesses with review QR codes see dramatic increases in feedback"
+    title: "More Reviews",
+    description: "Make it effortless for happy customers to leave feedback"
   },
   {
     icon: Search,
@@ -76,11 +76,6 @@ const placementIdeas = [
   { location: "Product Packaging", tip: "For e-commerce & retail" },
 ]
 
-const stats = [
-  { value: "88%", label: "of consumers trust online reviews as much as personal recommendations" },
-  { value: "3.3x", label: "more likely to click a business with 4+ star reviews" },
-  { value: "72%", label: "of customers will leave a review if asked" },
-]
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -167,21 +162,6 @@ export default function GoogleReviewQRCode() {
           </div>
         </section>
 
-        {/* Stats Section */}
-        <section className="py-16 bg-muted/30 border-y border-border">
-          <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto text-center">
-              {stats.map((stat, i) => (
-                <div key={i}>
-                  <div className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-amber-500 mb-2">
-                    {stat.value}
-                  </div>
-                  <p className="text-muted-foreground text-sm">{stat.label}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* Benefits Section */}
         <section className="py-20">

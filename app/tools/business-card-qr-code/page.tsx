@@ -53,8 +53,8 @@ const benefits = [
   },
   {
     icon: TrendingUp,
-    title: "8x Higher Retention",
-    description: "Digital contacts are kept; 88% of paper cards get thrown away"
+    title: "Better Retention",
+    description: "Digital contacts stay in phones; paper cards often get lost"
   },
   {
     icon: Eye,

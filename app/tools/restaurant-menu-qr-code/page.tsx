@@ -47,7 +47,7 @@ export const metadata: Metadata = {
 const benefits = [
   {
     icon: DollarSign,
-    title: "Save $2,000-5,000/Year",
+    title: "Save on Printing",
     description: "Eliminate menu reprinting costs when prices or items change"
   },
   {
@@ -74,11 +74,6 @@ const placements = [
   { title: "Entry Signage", description: "While waiting to be seated" },
 ]
 
-const stats = [
-  { value: "73%", label: "of diners prefer digital menu option" },
-  { value: "15-20%", label: "reduction in ordering time" },
-  { value: "$3,500", label: "average annual savings on printing" },
-]
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -158,21 +153,6 @@ export default function RestaurantMenuQRCode() {
           </div>
         </section>
 
-        {/* Stats Section */}
-        <section className="py-16 bg-muted/30 border-y border-border">
-          <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto text-center">
-              {stats.map((stat, i) => (
-                <div key={i}>
-                  <div className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500 mb-2">
-                    {stat.value}
-                  </div>
-                  <p className="text-muted-foreground">{stat.label}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* Benefits Section */}
         <section className="py-20">
