@@ -134,7 +134,7 @@ Error correction allows QR codes to scan even when partially damaged. We use Lev
 - ☐ Destination URL is correct and mobile-friendly
 - ☐ Printed a test copy before full run
     `,
-    author: "Sarah Chen",
+    author: "Elena Voss",
     publishedAt: "2026-01-03",
     readTime: 8,
     category: "Guides",
@@ -308,7 +308,7 @@ Track these metrics monthly:
 - ☐ Weekly testing schedule set
 - ☐ Feedback collection system in place
     `,
-    author: "David Park",
+    author: "Kai Nakamura",
     publishedAt: "2025-12-28",
     readTime: 12,
     category: "Industry",
@@ -493,7 +493,7 @@ We tested QR codes in various conditions:
 
 **Our recommendation:** Use Level H unless you have a specific, technical reason not to. It's the "insurance policy" for your QR codes.
     `,
-    author: "Sarah Chen",
+    author: "Elena Voss",
     publishedAt: "2025-12-20",
     readTime: 9,
     category: "Technical",
@@ -737,7 +737,7 @@ Be transparent about tracking:
 - ☐ Schedule regular review meetings
 - ☐ Plan first A/B test
     `,
-    author: "David Park",
+    author: "Kai Nakamura",
     publishedAt: "2025-12-15",
     readTime: 11,
     category: "Marketing",
@@ -972,7 +972,7 @@ If you want static codes with some flexibility, try this approach:
 - Basic analytics only
 - Redirect requires technical setup
     `,
-    author: "Sarah Chen",
+    author: "Elena Voss",
     publishedAt: "2026-01-02",
     readTime: 10,
     category: "Guides",
@@ -1169,7 +1169,7 @@ Set a calendar reminder to update WiFi QR codes whenever you change passwords. O
 - ☐ Placed in visible, accessible location
 - ☐ Backup password available (for edge cases)
     `,
-    author: "David Park",
+    author: "Kai Nakamura",
     publishedAt: "2025-12-10",
     readTime: 8,
     category: "Tutorials",
@@ -1381,7 +1381,7 @@ Modern professionals often use both:
 - ☐ Design finalized with proper sizing
 - ☐ Test print checked before full run
     `,
-    author: "Sarah Chen",
+    author: "Elena Voss",
     publishedAt: "2025-11-30",
     readTime: 9,
     category: "Tutorials",
@@ -1590,7 +1590,7 @@ QR codes aren't magic—they're bridges. They connect physical experiences to di
 
 Start with one campaign. Test it. Learn from it. Scale what works.
     `,
-    author: "David Park",
+    author: "Kai Nakamura",
     publishedAt: "2025-11-15",
     readTime: 14,
     category: "Marketing",
@@ -1795,7 +1795,7 @@ QR codes are safe when used correctly. The technology isn't the problem—social
 - Monitoring for tampering
 - Responding quickly to reports
     `,
-    author: "Sarah Chen",
+    author: "Elena Voss",
     publishedAt: "2025-11-05",
     readTime: 10,
     category: "Security",
