@@ -94,44 +94,6 @@ export function QRGenerator() {
           <QRTemplates onSelect={handleTemplateSelect} />
         </div>
 
-        {/* Mobile: Stack preview on top */}
-        <div className="flex flex-col lg:hidden gap-6 mb-6">
-          {/* QR Preview Card - Mobile */}
-          <Card className="overflow-hidden border-border/50 shadow-xl shadow-black/5">
-            <CardContent className="p-4 sm:p-6">
-              <QRPreview content={qrContent} size={280} fgColor={fgColor} bgColor={bgColor} />
-
-              {hasContent && (
-                <div className="flex items-center justify-center gap-2 flex-wrap mt-4 pt-4 border-t border-border/50">
-                  <Badge variant="secondary" className="text-xs font-normal rounded-full">
-                    {contentSize} bytes
-                  </Badge>
-                  <Badge variant="secondary" className="text-xs font-normal capitalize rounded-full">
-                    {qrType.replace("_", " ")}
-                  </Badge>
-                  <Tooltip>
-                    <TooltipTrigger asChild>
-                      <Badge variant="outline" className="text-xs font-normal cursor-help rounded-full">
-                        <Info className="h-3 w-3 mr-1" />
-                        Level H
-                      </Badge>
-                    </TooltipTrigger>
-                    <TooltipContent>
-                      <p className="text-xs max-w-48">
-                        Highest error correction. Recovers data even if 30% of the QR code is damaged.
-                      </p>
-                    </TooltipContent>
-                  </Tooltip>
-                </div>
-              )}
-
-              <div className="mt-4 sm:mt-6">
-                <DownloadOptions content={qrContent} disabled={!hasContent} fgColor={fgColor} bgColor={bgColor} onDownload={handleDownload} />
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-
         <div className="grid lg:grid-cols-[1fr,420px] gap-6 lg:gap-12">
           {/* Left Column - Input */}
           <div className="space-y-4 sm:space-y-6">
@@ -150,6 +112,41 @@ export function QRGenerator() {
                 <QRTypeSelector selected={qrType} onSelect={handleTypeChange} />
                 <div className="border-t border-border/50 pt-4 sm:pt-6">
                   <QRFormFields type={qrType} payload={payload} onChange={setPayload} />
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* QR Preview Card - Mobile only */}
+            <Card className="lg:hidden overflow-hidden border-border/50 shadow-xl shadow-black/5">
+              <CardContent className="p-4 sm:p-6">
+                <QRPreview content={qrContent} size={280} fgColor={fgColor} bgColor={bgColor} />
+
+                {hasContent && (
+                  <div className="flex items-center justify-center gap-2 flex-wrap mt-4 pt-4 border-t border-border/50">
+                    <Badge variant="secondary" className="text-xs font-normal rounded-full">
+                      {contentSize} bytes
+                    </Badge>
+                    <Badge variant="secondary" className="text-xs font-normal capitalize rounded-full">
+                      {qrType.replace("_", " ")}
+                    </Badge>
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <Badge variant="outline" className="text-xs font-normal cursor-help rounded-full">
+                          <Info className="h-3 w-3 mr-1" />
+                          Level H
+                        </Badge>
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p className="text-xs max-w-48">
+                          Highest error correction. Recovers data even if 30% of the QR code is damaged.
+                        </p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </div>
+                )}
+
+                <div className="mt-4 sm:mt-6">
+                  <DownloadOptions content={qrContent} disabled={!hasContent} fgColor={fgColor} bgColor={bgColor} onDownload={handleDownload} />
                 </div>
               </CardContent>
             </Card>
