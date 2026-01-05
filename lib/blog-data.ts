@@ -154,6 +154,8 @@ Error correction allows QR codes to scan even when partially damaged. We use Lev
     title: "How to Create a QR Code Menu for Your Restaurant (Complete 2026 Guide)",
     excerpt: "Step-by-step guide to creating digital menus with QR codes. Includes placement tips, design templates, and the mistakes that cost restaurants customers.",
     content: `
+![Restaurant QR Code Menu Guide](/blog/restaurant-menu-hero.png)
+
 ## Why Every Restaurant Needs QR Code Menus in 2026
 
 QR code menus aren't just a pandemic relic—they're now expected by customers. Here's why smart restaurants are keeping them:
@@ -213,6 +215,8 @@ You have several options, each with trade-offs:
 - Minimize fancy animations
 - Test on older phones, not just your latest iPhone
 
+![Mobile Menu Mockup](/blog/restaurant-menu-mobile.png)
+
 ## Step 3: Generate Your QR Code
 
 1. Copy your menu URL
@@ -257,6 +261,8 @@ You have several options, each with trade-offs:
 - Avoid direct sunlight (screen glare)
 - Keep away from candles (fire hazard with paper)
 - Test scanning from all seated positions
+
+![Table Placement Examples](/blog/restaurant-menu-placement.png)
 
 ## Common Mistakes That Cost You Customers
 
@@ -320,7 +326,8 @@ Track these metrics monthly:
     publishedAt: "2025-12-28",
     readTime: 12,
     category: "Industry",
-    tags: ["restaurants", "menus", "hospitality", "digital menu"]
+    tags: ["restaurants", "menus", "hospitality", "digital menu"],
+    image: "/blog/restaurant-menu-hero.png"
   },
   {
     slug: "qr-code-error-correction-explained",
