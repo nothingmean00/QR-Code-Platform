@@ -526,6 +526,8 @@ We tested QR codes in various conditions:
     title: "How to Track QR Code Scans: Complete Guide to QR Analytics in 2026",
     excerpt: "Learn how to measure QR code performance with scan tracking, UTM parameters, and analytics integration. Make data-driven decisions about your campaigns.",
     content: `
+![QR Code Tracking & Analytics](/blog/tracking-hero.png)
+
 ## Why QR Code Tracking Matters
 
 Printing QR codes without tracking is like running ads without measuring clicks. You're spending money but have no idea what's working.
@@ -579,6 +581,8 @@ https://yoursite.com/landing?utm_source=flyer&utm_medium=qr&utm_campaign=spring2
 - Requires Google Analytics setup
 - Can't track repeat vs. new scanners
 
+![UTM Tracking Diagram](/blog/tracking-utm-diagram.png)
+
 ## Method 2: URL Shorteners with Analytics
 
 Services like Bitly, Rebrandly, or Short.io provide built-in click tracking.
@@ -627,6 +631,8 @@ Purpose-built QR code platforms (like our Analytics subscription) provide the mo
 - City and country breakdown
 - Heat maps of scan locations
 - Radius filtering
+
+![Scan Map Visualization](/blog/tracking-scan-map.png)
 
 **Device Intelligence:**
 - iOS vs. Android breakdown
@@ -763,7 +769,8 @@ Be transparent about tracking:
     publishedAt: "2025-12-15",
     readTime: 11,
     category: "Marketing",
-    tags: ["analytics", "tracking", "marketing", "UTM", "ROI"]
+    tags: ["analytics", "tracking", "marketing", "UTM", "ROI"],
+    image: "/blog/tracking-hero.png"
   },
   {
     slug: "dynamic-vs-static-qr-codes",
