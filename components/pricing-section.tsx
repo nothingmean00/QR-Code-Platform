@@ -64,6 +64,10 @@ const plans = [
 ]
 
 export function PricingSection() {
+  const scrollToGenerator = () => {
+    document.getElementById("generator")?.scrollIntoView({ behavior: "smooth" })
+  }
+
   return (
     <section id="pricing" className="py-16 sm:py-20 md:py-32 relative overflow-hidden">
       {/* Background */}
@@ -160,6 +164,7 @@ export function PricingSection() {
                   )} 
                   variant={plan.highlighted ? "default" : "outline"}
                   size="lg"
+                  onClick={scrollToGenerator}
                 >
                   {plan.cta}
                 </Button>
@@ -187,7 +192,11 @@ export function PricingSection() {
                   Business Pack: 25 QR codes for $49.99 (60% savings)
                 </p>
               </div>
-              <Button variant="outline" className="rounded-lg sm:rounded-xl whitespace-nowrap text-sm w-full sm:w-auto">
+              <Button 
+                variant="outline" 
+                className="rounded-lg sm:rounded-xl whitespace-nowrap text-sm w-full sm:w-auto"
+                onClick={scrollToGenerator}
+              >
                 View All Packs
               </Button>
             </CardContent>
