@@ -308,7 +308,7 @@ Track these metrics monthly:
 - ☐ Weekly testing schedule set
 - ☐ Feedback collection system in place
     `,
-    author: "Marcus Rodriguez",
+    author: "David Park",
     publishedAt: "2025-12-28",
     readTime: 12,
     category: "Industry",
@@ -737,7 +737,7 @@ Be transparent about tracking:
 - ☐ Schedule regular review meetings
 - ☐ Plan first A/B test
     `,
-    author: "Marcus Rodriguez",
+    author: "David Park",
     publishedAt: "2025-12-15",
     readTime: 11,
     category: "Marketing",
@@ -1169,7 +1169,7 @@ Set a calendar reminder to update WiFi QR codes whenever you change passwords. O
 - ☐ Placed in visible, accessible location
 - ☐ Backup password available (for edge cases)
     `,
-    author: "Marcus Rodriguez",
+    author: "David Park",
     publishedAt: "2025-12-10",
     readTime: 8,
     category: "Tutorials",
@@ -1590,7 +1590,7 @@ QR codes aren't magic—they're bridges. They connect physical experiences to di
 
 Start with one campaign. Test it. Learn from it. Scale what works.
     `,
-    author: "Marcus Rodriguez",
+    author: "David Park",
     publishedAt: "2025-11-15",
     readTime: 14,
     category: "Marketing",
