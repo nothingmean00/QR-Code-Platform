@@ -4,6 +4,17 @@ import { getAllBlogSlugs, getBlogPostBySlug } from '@/lib/blog-data'
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://qr-generator.com'
 
+const toolSlugs = [
+  'wifi-qr-code-generator',
+  'vcard-qr-code-generator',
+  'restaurant-menu-qr-code',
+  'google-review-qr-code',
+  'bulk-qr-code-generator',
+  'qr-code-templates',
+  'business-card-qr-code',
+  'event-qr-code-generator',
+]
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const useCaseSlugs = getAllUseCaseSlugs()
   const blogSlugs = getAllBlogSlugs()
@@ -26,12 +37,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   })
 
+  const toolPages = toolSlugs.map((slug) => ({
+    url: `${BASE_URL}/tools/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.85,
+  }))
+
   return [
     {
       url: BASE_URL,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 1,
+    },
+    {
+      url: `${BASE_URL}/tools`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
     },
     {
       url: `${BASE_URL}/use-cases`,
@@ -57,6 +81,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly',
       priority: 0.3,
     },
+    ...toolPages,
     ...useCasePages,
     ...blogPages,
   ]
