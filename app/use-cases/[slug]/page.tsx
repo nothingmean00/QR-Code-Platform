@@ -21,7 +21,7 @@ import {
   ArrowLeft
 } from "lucide-react"
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://qr-generator.com'
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://generateqrcode.org'
 
 interface PageProps {
   params: Promise<{ slug: string }>
@@ -100,7 +100,7 @@ export default async function UseCasePage({ params }: PageProps) {
           "@type": "WebSite",
           "@id": `${BASE_URL}/#website`,
           "url": BASE_URL,
-          "name": "QR Generator",
+          "name": "GenerateQRcode.org",
         },
         "breadcrumb": {
           "@type": "BreadcrumbList",

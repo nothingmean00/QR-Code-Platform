@@ -464,7 +464,7 @@ Encoding the same URL at each level produces different sized codes:
 
 ## Why We Default to Level H
 
-At QR Generator, we use Level H for every code. Here's why:
+At GenerateQRcode.org, we use Level H for every code. Here's why:
 
 1. **Real-world conditions are unpredictable** - Your business card will get bent. Your poster will get rained on. Your product label will get scratched.
 

@@ -5,8 +5,8 @@ import { Footer } from "@/components/footer"
 import { ArrowLeft } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Terms of Service | QR Generator",
-  description: "Terms and conditions for using the QR Generator service.",
+  title: "Terms of Service | GenerateQRcode.org",
+  description: "Terms and conditions for using the GenerateQRcode.org service.",
 }
 
 export default function TermsOfServicePage() {
@@ -36,14 +36,14 @@ export default function TermsOfServicePage() {
               <section>
                 <h2 className="text-xl font-semibold mb-3">1. Acceptance of Terms</h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  By accessing or using QR Generator ("Service"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, do not use the Service. We reserve the right to modify these Terms at any time, and your continued use constitutes acceptance of any changes.
+                  By accessing or using GenerateQRcode.org ("Service"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, do not use the Service. We reserve the right to modify these Terms at any time, and your continued use constitutes acceptance of any changes.
                 </p>
               </section>
 
               <section>
                 <h2 className="text-xl font-semibold mb-3">2. Description of Service</h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  QR Generator provides a platform for creating QR codes that encode various types of data including URLs, text, WiFi credentials, contact information, and other content. We offer both one-time purchases and subscription services for enhanced features.
+                  GenerateQRcode.org provides a platform for creating QR codes that encode various types of data including URLs, text, WiFi credentials, contact information, and other content. We offer both one-time purchases and subscription services for enhanced features.
                 </p>
               </section>
 
@@ -92,7 +92,7 @@ export default function TermsOfServicePage() {
               <section>
                 <h2 className="text-xl font-semibold mb-3">6. Intellectual Property</h2>
                 <p className="text-muted-foreground leading-relaxed mb-3">
-                  <strong>Our IP:</strong> The Service, including its design, features, and content (excluding user-generated content), is owned by QR Generator and protected by intellectual property laws.
+                  <strong>Our IP:</strong> The Service, including its design, features, and content (excluding user-generated content), is owned by GenerateQRcode.org and protected by intellectual property laws.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
                   <strong>Your Content:</strong> You retain ownership of any content you encode in QR codes. By using the Service, you grant us a limited license to process this content solely for the purpose of generating your QR codes.
@@ -130,7 +130,7 @@ export default function TermsOfServicePage() {
               <section>
                 <h2 className="text-xl font-semibold mb-3">11. Indemnification</h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  You agree to indemnify and hold harmless QR Generator and its officers, directors, employees, and agents from any claims, damages, losses, or expenses (including legal fees) arising from your use of the Service, your violation of these Terms, or your violation of any third-party rights.
+                  You agree to indemnify and hold harmless GenerateQRcode.org and its officers, directors, employees, and agents from any claims, damages, losses, or expenses (including legal fees) arising from your use of the Service, your violation of these Terms, or your violation of any third-party rights.
                 </p>
               </section>
 

@@ -14,10 +14,10 @@ export function Footer() {
               <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-primary to-primary/80 rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg shadow-primary/20">
                 <QrCode className="w-4 h-4 sm:w-5 sm:h-5 text-primary-foreground" />
               </div>
-              <span className="font-semibold text-base sm:text-lg text-foreground">QR Generator</span>
+              <span className="font-semibold text-base sm:text-lg text-foreground">GenerateQR</span>
             </Link>
             <p className="text-xs sm:text-sm text-muted-foreground max-w-sm leading-relaxed">
-              Generate high-quality, print-safe QR codes for any use case. Built with precision and reliability in mind.
+              Generate QR codes instantly for free. Create codes for URLs, WiFi, vCards, and more. No signup required.
             </p>
           </div>
 
@@ -108,7 +108,7 @@ export function Footer() {
 
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 text-[10px] sm:text-sm text-muted-foreground">
           <p className="text-center sm:text-left">Built for reliability. No tracking on free tier.</p>
-          <p>&copy; {new Date().getFullYear()} QR Generator. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} GenerateQRcode.org. All rights reserved.</p>
         </div>
       </div>
     </footer>

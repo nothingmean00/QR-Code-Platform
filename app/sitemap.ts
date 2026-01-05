@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next'
 import { getAllUseCaseSlugs } from '@/lib/use-cases-data'
 import { getAllBlogSlugs, getBlogPostBySlug } from '@/lib/blog-data'
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://qr-generator.com'
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://generateqrcode.org'
 
 const toolSlugs = [
   'wifi-qr-code-generator',

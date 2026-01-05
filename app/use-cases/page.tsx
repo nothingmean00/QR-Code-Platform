@@ -6,7 +6,7 @@ import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, QrCode } from "lucide-react"
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://qr-generator.com'
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://generateqrcode.org'
 
 export const metadata: Metadata = {
   title: "QR Code Use Cases by Industry | QR Code Generator",

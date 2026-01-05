@@ -63,7 +63,7 @@ export async function GET() {
               textAlign: 'center',
             }}
           >
-            QR Code Generator
+            Generate QR Code
           </div>
           <div
             style={{
@@ -73,7 +73,7 @@ export async function GET() {
               maxWidth: 800,
             }}
           >
-            Print-Safe, Professional QR Codes
+            Free QR Code Generator Online
           </div>
         </div>
 
@@ -85,7 +85,7 @@ export async function GET() {
             marginTop: 48,
           }}
         >
-          {['Level H Protection', 'SVG & PNG Export', 'No Signup'].map((feature) => (
+          {['100% Free', 'No Signup Required', 'Instant Download'].map((feature) => (
             <div
               key={feature}
               style={{

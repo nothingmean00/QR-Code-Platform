@@ -8,7 +8,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Clock, BookOpen, Sparkles, TrendingUp } from "lucide-react"
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://qr-generator.com'
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://generateqrcode.org'
 
 export const metadata: Metadata = {
   title: "QR Code Blog | Tips, Guides & Best Practices",

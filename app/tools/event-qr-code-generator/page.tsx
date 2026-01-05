@@ -21,7 +21,7 @@ import {
   Cake
 } from "lucide-react"
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://qr-generator.com'
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://generateqrcode.org'
 
 export const metadata: Metadata = {
   title: "Event QR Code Generator | Check-In, Tickets & Registration",

@@ -25,7 +25,7 @@ export function Header() {
             <div className="w-8 h-8 sm:w-9 sm:h-9 bg-gradient-to-br from-primary to-primary/80 rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg shadow-primary/20 group-hover:shadow-primary/30 transition-shadow">
               <QrCode className="w-4 h-4 sm:w-5 sm:h-5 text-primary-foreground" />
             </div>
-            <span className="font-semibold text-base sm:text-lg text-foreground tracking-tight">QR Generator</span>
+            <span className="font-semibold text-base sm:text-lg text-foreground tracking-tight">GenerateQR</span>
           </Link>
           
           {/* Desktop Navigation */}

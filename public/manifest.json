@@ -1,7 +1,7 @@
 {
-  "name": "QR Code Generator",
-  "short_name": "QR Generator",
-  "description": "Generate high-quality, print-safe QR codes for URLs, WiFi, vCards, and more.",
+  "name": "Generate QR Code - Free QR Code Generator",
+  "short_name": "GenerateQR",
+  "description": "Generate QR codes instantly for free. Create QR codes for URLs, WiFi, vCards, menus, and more. No signup required.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#fafafa",

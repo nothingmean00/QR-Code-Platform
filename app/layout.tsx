@@ -23,41 +23,45 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 })
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://qr-generator.com'
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://generateqrcode.org'
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "QR Code Generator | Print-Safe, Professional QR Codes",
-    template: "%s | QR Generator"
+    default: "Generate QR Code | Free QR Code Generator Online",
+    template: "%s | GenerateQRcode.org"
   },
   description:
-    "Generate high-quality, print-safe QR codes for URLs, WiFi, vCards, and more. Free downloads, no account required. SVG & PDF exports available.",
+    "Generate QR codes instantly for free. Create QR codes for URLs, WiFi, vCards, menus, and more. No signup required. Download as PNG, SVG, or PDF.",
   keywords: [
-    "QR code",
-    "QR generator",
-    "print QR code",
-    "dynamic QR code",
+    "generate QR code",
+    "QR code generator",
+    "free QR code generator",
+    "create QR code",
+    "make QR code",
+    "QR code maker",
+    "QR code creator",
+    "online QR generator",
     "WiFi QR code",
     "vCard QR code",
-    "free QR code",
-    "QR code maker",
-    "create QR code",
-    "QR code creator",
-    "best QR code generator",
-    "professional QR codes",
+    "menu QR code",
+    "QR code for business",
+    "custom QR code",
+    "print QR code",
+    "dynamic QR code",
+    "QR code generator free",
   ],
-  authors: [{ name: "QR Generator" }],
-  creator: "QR Generator",
-  publisher: "QR Generator",
+  authors: [{ name: "GenerateQRcode.org" }],
+  creator: "GenerateQRcode.org",
+  publisher: "GenerateQRcode.org",
   alternates: {
     canonical: BASE_URL,
   },
   openGraph: {
-    title: "QR Code Generator | Print-Safe, Professional QR Codes",
-    description: "Generate high-quality, print-safe QR codes. Free downloads, no account required.",
+    title: "Generate QR Code | Free QR Code Generator Online",
+    description: "Generate QR codes instantly for free. Create QR codes for URLs, WiFi, vCards, menus, and more. No signup required.",
     type: "website",
-    siteName: "QR Generator",
+    siteName: "GenerateQRcode.org",
     url: BASE_URL,
     locale: "en_US",
     images: [
@@ -65,16 +69,15 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "QR Code Generator - Create Professional QR Codes",
+        alt: "Generate QR Code - Free Online QR Code Generator",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "QR Code Generator | Print-Safe, Professional QR Codes",
-    description: "Generate high-quality, print-safe QR codes. Free downloads, no account required.",
+    title: "Generate QR Code | Free QR Code Generator Online",
+    description: "Generate QR codes instantly for free. Create QR codes for URLs, WiFi, vCards, and more.",
     images: ["/og-image.png"],
-    creator: "@qrgenerator",
   },
   robots: {
     index: true,
@@ -104,9 +107,6 @@ export const metadata: Metadata = {
       },
     ],
     apple: "/apple-icon.png",
-  },
-  verification: {
-    google: "google-site-verification-code",
   },
   category: "technology",
 }

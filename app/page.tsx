@@ -86,8 +86,8 @@ const jsonLd = {
     },
     {
       "@type": "Organization",
-      "name": "QR Generator",
-      "url": "https://qr-generator.com",
+      "name": "GenerateQRcode.org",
+      "url": "https://generateqrcode.org",
       "logo": "https://qr-generator.com/icon.svg",
       "sameAs": []
     }

@@ -21,7 +21,7 @@ import {
   Sheet
 } from "lucide-react"
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://qr-generator.com'
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://generateqrcode.org'
 
 export const metadata: Metadata = {
   title: "Bulk QR Code Generator | Create Multiple QR Codes at Once",

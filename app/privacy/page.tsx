@@ -5,8 +5,8 @@ import { Footer } from "@/components/footer"
 import { ArrowLeft } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | QR Generator",
-  description: "Learn how QR Generator collects, uses, and protects your personal information.",
+  title: "Privacy Policy | GenerateQRcode.org",
+  description: "Learn how GenerateQRcode.org collects, uses, and protects your personal information.",
 }
 
 export default function PrivacyPolicyPage() {
@@ -36,7 +36,7 @@ export default function PrivacyPolicyPage() {
               <section>
                 <h2 className="text-xl font-semibold mb-3">1. Introduction</h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  QR Generator ("we," "our," or "us") respects your privacy and is committed to protecting your personal data. This privacy policy explains how we collect, use, disclose, and safeguard your information when you use our QR code generation service.
+                  GenerateQRcode.org ("we," "our," or "us") respects your privacy and is committed to protecting your personal data. This privacy policy explains how we collect, use, disclose, and safeguard your information when you use our QR code generation service.
                 </p>
               </section>
 

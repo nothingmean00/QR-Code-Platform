@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button"
 import { ArrowLeft, ArrowRight, Clock, Calendar, User, Share2, BookOpen } from "lucide-react"
 import { BlogContent } from "@/components/blog-content"
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://qr-generator.com'
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://generateqrcode.org'
 
 interface PageProps {
   params: Promise<{ slug: string }>
@@ -98,7 +98,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         },
         "publisher": {
           "@type": "Organization",
-          "name": "QR Generator",
+          "name": "GenerateQRcode.org",
           "logo": {
             "@type": "ImageObject",
             "url": `${BASE_URL}/icon.svg`
