@@ -17,6 +17,8 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "QR Code Size Guide: How Big Should Your QR Code Be for Print?",
     excerpt: "Learn the optimal QR code sizes for business cards, posters, billboards, and packaging. Avoid the #1 mistake that makes QR codes unscannable.",
     content: `
+![QR Code Size Guide Hero](/blog/qr-size-guide-hero.png)
+
 ## The Golden Rule of QR Code Sizing
 
 The minimum size for a QR code depends on the scanning distance. Here's the simple formula that professionals use:
@@ -24,6 +26,8 @@ The minimum size for a QR code depends on the scanning distance. Here's the simp
 **Minimum QR Size = Scanning Distance ÷ 10**
 
 So if someone will scan from 10 feet away, your QR code needs to be at least 1 foot (12 inches) wide. This rule accounts for camera resolution, lighting conditions, and user error.
+
+![Scanning Distance Visual](/blog/qr-size-guide-scanning.png)
 
 ## Why Size Matters More Than You Think
 
@@ -114,6 +118,8 @@ Error correction allows QR codes to scan even when partially damaged. We use Lev
 7. **Assuming digital = print** - Screen resolution differs from print DPI
 
 ## Quick Reference Chart
+
+![Size Comparison Diagram](/blog/qr-size-guide-comparison.png)
 
 | Application | Min Size | Recommended | Max Distance |
 |------------|----------|-------------|--------------|
