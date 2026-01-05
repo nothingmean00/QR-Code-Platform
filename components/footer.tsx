@@ -22,7 +22,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold text-xs sm:text-sm mb-3 sm:mb-4 text-foreground">QR Types</h4>
+            <h2 className="font-semibold text-xs sm:text-sm mb-3 sm:mb-4 text-foreground">QR Types</h2>
             <ul className="space-y-2 sm:space-y-3 text-xs sm:text-sm text-muted-foreground">
               <li>
                 <Link href="/#generator" className="hover:text-primary transition-colors">
@@ -48,7 +48,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold text-xs sm:text-sm mb-3 sm:mb-4 text-foreground">Industries</h4>
+            <h2 className="font-semibold text-xs sm:text-sm mb-3 sm:mb-4 text-foreground">Industries</h2>
             <ul className="space-y-2 sm:space-y-3 text-xs sm:text-sm text-muted-foreground">
               <li>
                 <Link href="/use-cases/retail-ecommerce" className="hover:text-primary transition-colors">
@@ -74,7 +74,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold text-xs sm:text-sm mb-3 sm:mb-4 text-foreground">Resources</h4>
+            <h2 className="font-semibold text-xs sm:text-sm mb-3 sm:mb-4 text-foreground">Resources</h2>
             <ul className="space-y-2 sm:space-y-3 text-xs sm:text-sm text-muted-foreground">
               <li>
                 <Link href="/blog" className="hover:text-primary transition-colors">

@@ -22,7 +22,7 @@ export function CTASection() {
       
       <div className="container mx-auto px-4 text-center relative">
         <div className="max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-primary/10 text-primary text-xs sm:text-sm font-medium mb-4 sm:mb-6">
+          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-primary/15 text-foreground text-xs sm:text-sm font-medium mb-4 sm:mb-6">
             <Sparkles className="h-3 w-3 sm:h-4 sm:w-4" />
             Ready to get started?
           </div>

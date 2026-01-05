@@ -21,7 +21,6 @@ import {
   Music,
   DollarSign,
 } from "lucide-react"
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { useState } from "react"
 import { Badge } from "@/components/ui/badge"
 
@@ -66,28 +65,33 @@ export function QRTypeSelector({ selected, onSelect }: QRTypeSelectorProps) {
     <div className="space-y-4">
       <div className="flex items-center justify-between gap-4 flex-wrap">
         <label className="text-sm font-medium text-foreground">QR Type</label>
-        <Tabs value={category} onValueChange={(v) => setCategory(v as typeof category)} className="w-auto">
-          <TabsList className="h-8">
-            <TabsTrigger value="all" className="text-xs px-2.5 gap-1">
-              All
-              <Badge variant="secondary" className="h-4 px-1 text-[10px] rounded">
-                {categoryCount.all}
-              </Badge>
-            </TabsTrigger>
-            <TabsTrigger value="basic" className="text-xs px-2.5">
-              Basic
-            </TabsTrigger>
-            <TabsTrigger value="social" className="text-xs px-2.5">
-              Social
-            </TabsTrigger>
-            <TabsTrigger value="business" className="text-xs px-2.5">
-              Business
-            </TabsTrigger>
-          </TabsList>
-        </Tabs>
+        <div role="tablist" aria-label="QR code categories" className="bg-muted text-muted-foreground inline-flex h-8 w-fit items-center justify-center rounded-lg p-[3px]">
+          {(["all", "basic", "social", "business"] as const).map((cat) => (
+            <button
+              key={cat}
+              role="tab"
+              aria-selected={category === cat}
+              aria-controls={`qr-types-panel`}
+              onClick={() => setCategory(cat)}
+              className={cn(
+                "inline-flex h-[calc(100%-1px)] items-center justify-center gap-1.5 rounded-md px-2.5 py-1 text-xs font-medium whitespace-nowrap transition-colors",
+                category === cat
+                  ? "bg-background text-foreground shadow-sm"
+                  : "text-muted-foreground hover:text-foreground"
+              )}
+            >
+              {cat === "all" ? "All" : cat.charAt(0).toUpperCase() + cat.slice(1)}
+              {cat === "all" && (
+                <Badge variant="secondary" className="h-4 px-1 text-[10px] rounded">
+                  {categoryCount.all}
+                </Badge>
+              )}
+            </button>
+          ))}
+        </div>
       </div>
 
-      <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-2">
+      <div id="qr-types-panel" role="tabpanel" aria-label="QR code types" className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-2">
         {filteredTypes.map((type) => {
           const Icon = ICONS[type.icon]
           const isSelected = selected === type.id

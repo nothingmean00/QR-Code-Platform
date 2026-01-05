@@ -63,7 +63,7 @@ export function HeroSection() {
           <div className="flex justify-center mb-6 sm:mb-8 animate-fade-in-up">
             <Badge 
               variant="secondary" 
-              className="gap-2 px-3 sm:px-5 py-2 sm:py-2.5 text-xs sm:text-sm font-medium bg-primary/10 text-primary border border-primary/20 rounded-full shadow-lg shadow-primary/5"
+              className="gap-2 px-3 sm:px-5 py-2 sm:py-2.5 text-xs sm:text-sm font-medium bg-primary/15 text-foreground border border-primary/25 rounded-full shadow-lg shadow-primary/5"
             >
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>

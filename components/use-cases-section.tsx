@@ -78,7 +78,7 @@ export function UseCasesSection() {
                     <Badge
                       key={tag}
                       variant="secondary"
-                      className="text-[10px] px-1.5 py-0 bg-primary/10 text-primary/80 border-0"
+                      className="text-[10px] px-1.5 py-0 bg-primary/15 text-foreground border-0"
                     >
                       {tag}
                     </Badge>

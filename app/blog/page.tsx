@@ -61,7 +61,7 @@ export default function BlogPage() {
         
         <div className="container relative mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <Badge variant="secondary" className="mb-6 bg-primary/10 text-primary border-primary/20 px-4 py-1.5">
+            <Badge variant="secondary" className="mb-6 bg-primary/15 text-foreground border-primary/25 px-4 py-1.5">
               <BookOpen className="h-3.5 w-3.5 mr-2" />
               Knowledge Base
             </Badge>

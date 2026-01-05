@@ -224,6 +224,7 @@ export function QRHistory({ onSelect }: QRHistoryProps) {
                             variant="ghost"
                             size="icon"
                             className="h-7 w-7"
+                            aria-label={`Download QR code: ${item.label}`}
                             onClick={(e) => {
                               e.stopPropagation()
                               downloadFromHistory(item)
@@ -235,6 +236,7 @@ export function QRHistory({ onSelect }: QRHistoryProps) {
                             variant="ghost"
                             size="icon"
                             className="h-7 w-7 text-destructive hover:text-destructive"
+                            aria-label={`Delete QR code: ${item.label}`}
                             onClick={(e) => {
                               e.stopPropagation()
                               removeFromHistory(item.id)

@@ -76,7 +76,7 @@ export function PricingSection() {
       
       <div className="container mx-auto px-4">
         <div className="text-center mb-10 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-primary/10 text-primary text-xs sm:text-sm font-medium mb-3 sm:mb-4">
+          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-primary/15 text-foreground text-xs sm:text-sm font-medium mb-3 sm:mb-4">
             <Sparkles className="h-3 w-3 sm:h-4 sm:w-4" />
             Simple Pricing
           </div>
@@ -107,7 +107,7 @@ export function PricingSection() {
               )}
               
               {plan.badge && (
-                <Badge className="absolute top-3 right-3 sm:top-4 sm:right-4 px-2 sm:px-3 py-0.5 sm:py-1 text-xs bg-primary text-primary-foreground font-semibold shadow-lg">
+                <Badge className="absolute top-3 right-3 sm:top-4 sm:right-4 px-2 sm:px-3 py-0.5 sm:py-1 text-xs bg-foreground text-background font-semibold shadow-lg">
                   {plan.badge}
                 </Badge>
               )}
