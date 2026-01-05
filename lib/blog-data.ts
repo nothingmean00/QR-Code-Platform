@@ -1019,6 +1019,8 @@ If you want static codes with some flexibility, try this approach:
     title: "How to Create a WiFi QR Code: Share Your Network Instantly",
     excerpt: "Create a QR code that connects guests to your WiFi automatically. Perfect for homes, offices, restaurants, and events. No more spelling out passwords.",
     content: `
+![WiFi QR Code Guide](/blog/wifi-hero.png)
+
 ## Why WiFi QR Codes Are Brilliant
 
 Instead of this awkward exchange:
@@ -1105,6 +1107,8 @@ The phone then auto-fills the connection dialog. On most devices, one tap connec
 - Include in welcome packets
 - Separate guest network recommended
 
+![Office WiFi QR Code Setup](/blog/wifi-office.png)
+
 **For Restaurants/Cafes:**
 - Include on table tents (combine with menu QR)
 - Post near entrance
@@ -1135,6 +1139,8 @@ The phone then auto-fills the connection dialog. On most devices, one tap connec
 - May need QR scanner app
 - Some very old phones don't support WiFi QR
 - Having password written as backup is wise
+
+![Device Compatibility](/blog/wifi-devices.png)
 
 ## Common Issues and Fixes
 
@@ -1210,7 +1216,8 @@ Set a calendar reminder to update WiFi QR codes whenever you change passwords. O
     readTime: 8,
     category: "Tutorials",
     tags: ["WiFi", "tutorial", "networking", "guest access"],
-    featured: true
+    featured: true,
+    image: "/blog/wifi-hero.png"
   },
   {
     slug: "vcard-qr-code-business-cards",
