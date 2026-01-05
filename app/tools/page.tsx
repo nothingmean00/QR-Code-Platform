@@ -6,16 +6,16 @@ import { Footer } from "@/components/footer"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import { 
-  Wifi, 
-  User, 
-  UtensilsCrossed, 
-  Star, 
-  Layers, 
-  Palette, 
-  CreditCard, 
-  Calendar,
+  Radio, 
+  Contact, 
+  ChefHat, 
+  Gem, 
+  Grid3X3, 
+  Brush, 
+  RectangleHorizontal, 
+  CalendarDays,
   ArrowRight,
-  Sparkles
+  Wand2
 } from "lucide-react"
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://qr-generator.com'
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
 
 const tools = [
   {
-    icon: Wifi,
+    icon: Radio,
     title: "WiFi QR Code",
     description: "Share WiFi passwords instantly. Guests scan and connect without typing.",
     href: "/tools/wifi-qr-code-generator",
@@ -54,7 +54,7 @@ const tools = [
     textColor: "text-blue-500"
   },
   {
-    icon: User,
+    icon: Contact,
     title: "vCard QR Code",
     description: "Digital business cards. Let contacts save your info with one scan.",
     href: "/tools/vcard-qr-code-generator",
@@ -63,7 +63,7 @@ const tools = [
     textColor: "text-violet-500"
   },
   {
-    icon: UtensilsCrossed,
+    icon: ChefHat,
     title: "Restaurant Menu",
     description: "Digital menus that save printing costs. Update prices instantly.",
     href: "/tools/restaurant-menu-qr-code",
@@ -72,7 +72,7 @@ const tools = [
     textColor: "text-orange-500"
   },
   {
-    icon: Star,
+    icon: Gem,
     title: "Google Reviews",
     description: "Get more 5-star reviews. Direct link to your Google review page.",
     href: "/tools/google-review-qr-code",
@@ -81,7 +81,7 @@ const tools = [
     textColor: "text-yellow-500"
   },
   {
-    icon: Layers,
+    icon: Grid3X3,
     title: "Bulk Generator",
     description: "Generate hundreds of QR codes at once from CSV. Perfect for products.",
     href: "/tools/bulk-qr-code-generator",
@@ -90,7 +90,7 @@ const tools = [
     textColor: "text-emerald-500"
   },
   {
-    icon: Palette,
+    icon: Brush,
     title: "Templates",
     description: "Pre-designed styles for every industry. One-click professional QR codes.",
     href: "/tools/qr-code-templates",
@@ -99,7 +99,7 @@ const tools = [
     textColor: "text-pink-500"
   },
   {
-    icon: CreditCard,
+    icon: RectangleHorizontal,
     title: "Business Cards",
     description: "Perfect size and placement guide for business card QR codes.",
     href: "/tools/business-card-qr-code",
@@ -108,7 +108,7 @@ const tools = [
     textColor: "text-slate-500"
   },
   {
-    icon: Calendar,
+    icon: CalendarDays,
     title: "Events",
     description: "Check-in, tickets, RSVPs, and more. QR codes for any event.",
     href: "/tools/event-qr-code-generator",
@@ -154,7 +154,7 @@ export default function ToolsPage() {
           <div className="container relative mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <Badge className="mb-6 px-4 py-2">
-                <Sparkles className="h-4 w-4 mr-2" />
+                <Wand2 className="h-4 w-4 mr-2" />
                 Free QR Code Tools
               </Badge>
               
@@ -216,7 +216,7 @@ export default function ToolsPage() {
               href="/#generator"
               className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-xl font-medium hover:bg-primary/90 transition-colors"
             >
-              <Sparkles className="h-5 w-5" />
+              <Wand2 className="h-5 w-5" />
               Open Full Generator
               <ArrowRight className="h-5 w-5" />
             </Link>

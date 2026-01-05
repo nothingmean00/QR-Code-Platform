@@ -7,20 +7,20 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import { 
-  Palette, 
+  Brush, 
   ArrowRight, 
-  CheckCircle2, 
-  Sparkles,
-  Briefcase,
-  Utensils,
-  Home,
-  Heart,
-  Music,
-  Dumbbell,
-  GraduationCap,
-  ShoppingBag,
-  Calendar,
-  Plane
+  BadgeCheck, 
+  Wand2,
+  Building2,
+  Soup,
+  Armchair,
+  HeartHandshake,
+  Disc3,
+  Bike,
+  BookOpen,
+  Store,
+  CalendarHeart,
+  Globe2
 } from "lucide-react"
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://qr-generator.com'
@@ -49,70 +49,70 @@ export const metadata: Metadata = {
 
 const templateCategories = [
   {
-    icon: Briefcase,
+    icon: Building2,
     name: "Business & Corporate",
     description: "Professional templates for business cards, offices, and B2B",
     colors: ["#1a1a2e", "#0066cc", "#2d3436"],
     templates: ["Minimal Black", "Corporate Blue", "Executive Gray"]
   },
   {
-    icon: Utensils,
+    icon: Soup,
     name: "Restaurant & Cafe",
     description: "Warm, inviting designs for menus and table tents",
     colors: ["#e17055", "#d63031", "#00b894"],
     templates: ["Rustic Wood", "Modern Bistro", "Fresh & Clean"]
   },
   {
-    icon: ShoppingBag,
+    icon: Store,
     name: "Retail & E-commerce",
     description: "Eye-catching styles for product packaging and promotions",
     colors: ["#6c5ce7", "#fd79a8", "#00cec9"],
     templates: ["Bold Pop", "Elegant Luxury", "Trendy Gradient"]
   },
   {
-    icon: Calendar,
+    icon: CalendarHeart,
     name: "Events & Conferences",
     description: "Dynamic templates for tickets, badges, and signage",
     colors: ["#e84393", "#00b894", "#fdcb6e"],
     templates: ["Festival Vibes", "Corporate Event", "Gala Night"]
   },
   {
-    icon: Heart,
+    icon: HeartHandshake,
     name: "Wedding & Personal",
     description: "Elegant designs for invitations and personal use",
     colors: ["#fab1a0", "#dfe6e9", "#b8e994"],
     templates: ["Romantic Rose", "Classic Ivory", "Garden Party"]
   },
   {
-    icon: Dumbbell,
+    icon: Bike,
     name: "Fitness & Health",
     description: "Energetic templates for gyms and wellness brands",
     colors: ["#00b894", "#e17055", "#0984e3"],
     templates: ["Energy Boost", "Zen Wellness", "Power Play"]
   },
   {
-    icon: Music,
+    icon: Disc3,
     name: "Music & Entertainment",
     description: "Creative designs for artists, venues, and media",
     colors: ["#a29bfe", "#fd79a8", "#ffeaa7"],
     templates: ["Neon Nights", "Vinyl Classic", "Festival"]
   },
   {
-    icon: GraduationCap,
+    icon: BookOpen,
     name: "Education",
     description: "Clean, accessible templates for schools and institutions",
     colors: ["#0984e3", "#00b894", "#636e72"],
     templates: ["Academic Blue", "Campus Green", "Learning"]
   },
   {
-    icon: Home,
+    icon: Armchair,
     name: "Real Estate",
     description: "Property listings, open house signs, and agent cards",
     colors: ["#2d3436", "#00b894", "#0984e3"],
     templates: ["Luxury Listing", "Modern Home", "Open House"]
   },
   {
-    icon: Plane,
+    icon: Globe2,
     name: "Travel & Hospitality",
     description: "Templates for hotels, tours, and travel agencies",
     colors: ["#00b894", "#0984e3", "#fdcb6e"],
@@ -162,7 +162,7 @@ export default function QRCodeTemplates() {
           <div className="container relative mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <Badge className="mb-6 bg-pink-500/10 text-pink-600 border-pink-500/20 px-4 py-2">
-                <Palette className="h-4 w-4 mr-2" />
+                <Brush className="h-4 w-4 mr-2" />
                 QR Code Templates
               </Badge>
               
@@ -181,7 +181,7 @@ export default function QRCodeTemplates() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
                 <Button size="lg" className="h-14 px-8 text-lg gap-2 bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600" asChild>
                   <Link href="/#generator">
-                    <Sparkles className="h-5 w-5" />
+                    <Wand2 className="h-5 w-5" />
                     Browse Templates
                     <ArrowRight className="h-5 w-5" />
                   </Link>
@@ -192,7 +192,7 @@ export default function QRCodeTemplates() {
               <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
                 {benefits.slice(0, 3).map((benefit, i) => (
                   <div key={i} className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-green-500" />
+                    <BadgeCheck className="h-4 w-4 text-green-500" />
                     {benefit}
                   </div>
                 ))}
@@ -303,19 +303,19 @@ export default function QRCodeTemplates() {
                   </p>
                   <ul className="space-y-3">
                     <li className="flex items-center gap-3">
-                      <CheckCircle2 className="h-5 w-5 text-green-500" />
+                      <BadgeCheck className="h-5 w-5 text-pink-500" />
                       <span>Pick any foreground color</span>
                     </li>
                     <li className="flex items-center gap-3">
-                      <CheckCircle2 className="h-5 w-5 text-green-500" />
+                      <BadgeCheck className="h-5 w-5 text-pink-500" />
                       <span>Choose background color or transparent</span>
                     </li>
                     <li className="flex items-center gap-3">
-                      <CheckCircle2 className="h-5 w-5 text-green-500" />
+                      <BadgeCheck className="h-5 w-5 text-pink-500" />
                       <span>Adjust error correction level</span>
                     </li>
                     <li className="flex items-center gap-3">
-                      <CheckCircle2 className="h-5 w-5 text-green-500" />
+                      <BadgeCheck className="h-5 w-5 text-pink-500" />
                       <span>Set custom size for your use case</span>
                     </li>
                   </ul>

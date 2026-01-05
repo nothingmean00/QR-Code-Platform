@@ -7,17 +7,16 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import { 
-  UtensilsCrossed, 
+  ChefHat, 
   ArrowRight, 
-  CheckCircle2, 
-  DollarSign,
-  Clock,
-  Smartphone,
-  RefreshCw,
-  Sparkles,
-  TrendingUp,
-  Users,
-  Printer
+  BadgeCheck, 
+  PiggyBank,
+  Timer,
+  ScanLine,
+  RotateCcw,
+  Wand2,
+  LineChart,
+  CircleDot
 } from "lucide-react"
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://qr-generator.com'
@@ -46,22 +45,22 @@ export const metadata: Metadata = {
 
 const benefits = [
   {
-    icon: DollarSign,
+    icon: PiggyBank,
     title: "Save on Printing",
     description: "Eliminate menu reprinting costs when prices or items change"
   },
   {
-    icon: RefreshCw,
+    icon: RotateCcw,
     title: "Update Instantly",
     description: "Change prices, add specials, or 86 items in real-time"
   },
   {
-    icon: Clock,
+    icon: Timer,
     title: "Reduce Wait Times",
     description: "Customers browse while waiting—order faster when seated"
   },
   {
-    icon: TrendingUp,
+    icon: LineChart,
     title: "Track What Works",
     description: "See which menu items get the most views with analytics"
   },
@@ -109,7 +108,7 @@ export default function RestaurantMenuQRCode() {
           <div className="container relative mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <Badge className="mb-6 bg-orange-500/10 text-orange-600 border-orange-500/20 px-4 py-2">
-                <UtensilsCrossed className="h-4 w-4 mr-2" />
+                <ChefHat className="h-4 w-4 mr-2" />
                 Restaurant Menu QR Code Generator
               </Badge>
               
@@ -128,7 +127,7 @@ export default function RestaurantMenuQRCode() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
                 <Button size="lg" className="h-14 px-8 text-lg gap-2 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600" asChild>
                   <Link href="/#generator">
-                    <Sparkles className="h-5 w-5" />
+                    <Wand2 className="h-5 w-5" />
                     Create Menu QR Code
                     <ArrowRight className="h-5 w-5" />
                   </Link>
@@ -137,15 +136,15 @@ export default function RestaurantMenuQRCode() {
               
               <div className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-green-500" />
+                  <BadgeCheck className="h-4 w-4 text-green-500" />
                   Free to Create
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-green-500" />
+                  <BadgeCheck className="h-4 w-4 text-green-500" />
                   Print-Ready Quality
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-green-500" />
+                  <BadgeCheck className="h-4 w-4 text-green-500" />
                   Works on All Phones
                 </div>
               </div>
@@ -268,21 +267,21 @@ export default function RestaurantMenuQRCode() {
                 Pro Tips for Restaurant QR Menus
               </h2>
               
-              <div className="space-y-4">
+                <div className="space-y-4">
                 <div className="flex items-start gap-3 p-4 rounded-xl bg-card border border-border/50">
-                  <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                  <CircleDot className="h-5 w-5 text-orange-500 mt-0.5 flex-shrink-0" />
                   <p><strong>Always keep paper menus available</strong> — Some customers prefer physical menus, especially older demographics.</p>
                 </div>
                 <div className="flex items-start gap-3 p-4 rounded-xl bg-card border border-border/50">
-                  <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                  <CircleDot className="h-5 w-5 text-orange-500 mt-0.5 flex-shrink-0" />
                   <p><strong>Test your menu loads fast</strong> — Under 3 seconds on 4G. Compress images, skip heavy animations.</p>
                 </div>
                 <div className="flex items-start gap-3 p-4 rounded-xl bg-card border border-border/50">
-                  <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                  <CircleDot className="h-5 w-5 text-orange-500 mt-0.5 flex-shrink-0" />
                   <p><strong>Design mobile-first</strong> — Single column, large text (16px+), tappable buttons. Test on real phones.</p>
                 </div>
                 <div className="flex items-start gap-3 p-4 rounded-xl bg-card border border-border/50">
-                  <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                  <CircleDot className="h-5 w-5 text-orange-500 mt-0.5 flex-shrink-0" />
                   <p><strong>Laminate table materials</strong> — Spills happen. Replace worn QR codes every 2-3 months.</p>
                 </div>
               </div>

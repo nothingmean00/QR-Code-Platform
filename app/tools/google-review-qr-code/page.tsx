@@ -7,17 +7,16 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import { 
-  Star, 
+  Gem, 
   ArrowRight, 
-  CheckCircle2, 
-  TrendingUp,
-  Search,
-  Users,
-  MessageSquare,
-  Sparkles,
-  MapPin,
-  ThumbsUp,
-  Award
+  BadgeCheck, 
+  Rocket,
+  SearchCheck,
+  MousePointerClick,
+  Wand2,
+  Navigation,
+  Handshake,
+  Trophy
 } from "lucide-react"
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://qr-generator.com'
@@ -46,22 +45,22 @@ export const metadata: Metadata = {
 
 const benefits = [
   {
-    icon: TrendingUp,
+    icon: Rocket,
     title: "More Reviews",
     description: "Make it effortless for happy customers to leave feedback"
   },
   {
-    icon: Search,
+    icon: SearchCheck,
     title: "Better SEO Ranking",
     description: "More reviews = higher local search placement"
   },
   {
-    icon: ThumbsUp,
+    icon: MousePointerClick,
     title: "One-Tap Reviews",
     description: "Customers go straight to review page—no searching"
   },
   {
-    icon: Award,
+    icon: Trophy,
     title: "Social Proof",
     description: "Build trust with new customers through authentic reviews"
   },
@@ -111,7 +110,7 @@ export default function GoogleReviewQRCode() {
           <div className="container relative mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <Badge className="mb-6 bg-yellow-500/10 text-yellow-600 border-yellow-500/20 px-4 py-2">
-                <Star className="h-4 w-4 mr-2 fill-current" />
+                <Gem className="h-4 w-4 mr-2" />
                 Google Review QR Code Generator
               </Badge>
               
@@ -130,7 +129,7 @@ export default function GoogleReviewQRCode() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
                 <Button size="lg" className="h-14 px-8 text-lg gap-2 bg-gradient-to-r from-yellow-500 to-amber-500 hover:from-yellow-600 hover:to-amber-600" asChild>
                   <Link href="/#generator">
-                    <Sparkles className="h-5 w-5" />
+                    <Wand2 className="h-5 w-5" />
                     Create Review QR Code
                     <ArrowRight className="h-5 w-5" />
                   </Link>
@@ -138,23 +137,23 @@ export default function GoogleReviewQRCode() {
               </div>
               
               {/* Star Rating Visual */}
-              <div className="flex justify-center gap-1 mb-8">
-                {[1, 2, 3, 4, 5].map((star) => (
-                  <Star key={star} className="h-8 w-8 text-yellow-500 fill-yellow-500" />
+              <div className="flex justify-center gap-2 mb-8">
+                {[1, 2, 3, 4, 5].map((i) => (
+                  <Gem key={i} className="h-7 w-7 text-yellow-500 fill-yellow-500" />
                 ))}
               </div>
               
               <div className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-green-500" />
+                  <BadgeCheck className="h-4 w-4 text-green-500" />
                   100% Free
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-green-500" />
+                  <BadgeCheck className="h-4 w-4 text-green-500" />
                   Direct to Review Page
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-green-500" />
+                  <BadgeCheck className="h-4 w-4 text-green-500" />
                   Works on All Devices
                 </div>
               </div>
@@ -262,7 +261,7 @@ export default function GoogleReviewQRCode() {
                   <Card key={i} className="border-border/50">
                     <CardContent className="p-5">
                       <div className="flex items-start gap-3">
-                        <MapPin className="h-5 w-5 text-yellow-500 mt-0.5" />
+                        <Navigation className="h-5 w-5 text-yellow-500 mt-0.5" />
                         <div>
                           <h3 className="font-semibold mb-1">{item.location}</h3>
                           <p className="text-sm text-muted-foreground">{item.tip}</p>

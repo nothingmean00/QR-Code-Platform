@@ -7,18 +7,18 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import { 
-  Layers, 
+  Grid3X3, 
   ArrowRight, 
-  CheckCircle2, 
-  Zap,
-  Download,
-  Table,
-  Package,
-  Tag,
-  Sparkles,
-  Clock,
-  Settings,
-  FileSpreadsheet
+  BadgeCheck, 
+  Gauge,
+  CloudDownload,
+  TableProperties,
+  Box,
+  Tags,
+  Wand2,
+  Hourglass,
+  SlidersHorizontal,
+  Sheet
 } from "lucide-react"
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://qr-generator.com'
@@ -47,32 +47,32 @@ export const metadata: Metadata = {
 
 const useCases = [
   {
-    icon: Package,
+    icon: Box,
     title: "Product Packaging",
     description: "Unique codes for each SKU linking to product info, warranties, or promotions"
   },
   {
-    icon: Tag,
+    icon: Tags,
     title: "Asset Tracking",
     description: "Label equipment, inventory, and assets with scannable identifiers"
   },
   {
-    icon: Layers,
+    icon: Grid3X3,
     title: "Event Badges",
     description: "Generate personalized check-in codes for every attendee"
   },
   {
-    icon: Table,
+    icon: TableProperties,
     title: "Marketing Campaigns",
     description: "Unique codes per flyer location to track campaign performance"
   },
 ]
 
 const features = [
-  { icon: FileSpreadsheet, title: "CSV/Excel Upload", description: "Import URLs from spreadsheets" },
-  { icon: Download, title: "ZIP Download", description: "Get all codes in one organized file" },
-  { icon: Settings, title: "Consistent Styling", description: "Same colors/size across all codes" },
-  { icon: Clock, title: "Generate in Seconds", description: "100+ codes in under a minute" },
+  { icon: Sheet, title: "CSV/Excel Upload", description: "Import URLs from spreadsheets" },
+  { icon: CloudDownload, title: "ZIP Download", description: "Get all codes in one organized file" },
+  { icon: SlidersHorizontal, title: "Consistent Styling", description: "Same colors/size across all codes" },
+  { icon: Hourglass, title: "Generate in Seconds", description: "100+ codes in under a minute" },
 ]
 
 const howItWorks = [
@@ -123,7 +123,7 @@ export default function BulkQRCodeGenerator() {
           <div className="container relative mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <Badge className="mb-6 bg-emerald-500/10 text-emerald-600 border-emerald-500/20 px-4 py-2">
-                <Layers className="h-4 w-4 mr-2" />
+                <Grid3X3 className="h-4 w-4 mr-2" />
                 Bulk QR Code Generator
               </Badge>
               
@@ -143,7 +143,7 @@ export default function BulkQRCodeGenerator() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
                 <Button size="lg" className="h-14 px-8 text-lg gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600" asChild>
                   <Link href="/#generator">
-                    <Sparkles className="h-5 w-5" />
+                    <Wand2 className="h-5 w-5" />
                     Start Bulk Generation
                     <ArrowRight className="h-5 w-5" />
                   </Link>
@@ -152,15 +152,15 @@ export default function BulkQRCodeGenerator() {
               
               <div className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-green-500" />
+                  <BadgeCheck className="h-4 w-4 text-green-500" />
                   10 Codes Free
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-green-500" />
+                  <BadgeCheck className="h-4 w-4 text-green-500" />
                   CSV Upload
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-green-500" />
+                  <BadgeCheck className="h-4 w-4 text-green-500" />
                   ZIP Download
                 </div>
               </div>
@@ -297,9 +297,9 @@ export default function BulkQRCodeGenerator() {
                     <div className="text-3xl font-bold mb-2">Free</div>
                     <div className="text-muted-foreground mb-4">Up to 10 codes</div>
                     <ul className="text-sm text-left space-y-2">
-                      <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-green-500" /> PNG & SVG formats</li>
-                      <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-green-500" /> Basic styling</li>
-                      <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-green-500" /> ZIP download</li>
+                      <li className="flex items-center gap-2"><BadgeCheck className="h-4 w-4 text-green-500" /> PNG & SVG formats</li>
+                      <li className="flex items-center gap-2"><BadgeCheck className="h-4 w-4 text-green-500" /> Basic styling</li>
+                      <li className="flex items-center gap-2"><BadgeCheck className="h-4 w-4 text-green-500" /> ZIP download</li>
                     </ul>
                   </CardContent>
                 </Card>
@@ -309,9 +309,9 @@ export default function BulkQRCodeGenerator() {
                     <div className="text-3xl font-bold mb-2">$9</div>
                     <div className="text-muted-foreground mb-4">Up to 100 codes</div>
                     <ul className="text-sm text-left space-y-2">
-                      <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-green-500" /> Everything in Free</li>
-                      <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-green-500" /> Custom colors</li>
-                      <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-green-500" /> PDF format</li>
+                      <li className="flex items-center gap-2"><BadgeCheck className="h-4 w-4 text-green-500" /> Everything in Free</li>
+                      <li className="flex items-center gap-2"><BadgeCheck className="h-4 w-4 text-green-500" /> Custom colors</li>
+                      <li className="flex items-center gap-2"><BadgeCheck className="h-4 w-4 text-green-500" /> PDF format</li>
                     </ul>
                   </CardContent>
                 </Card>
@@ -321,9 +321,9 @@ export default function BulkQRCodeGenerator() {
                     <div className="text-3xl font-bold mb-2">$29</div>
                     <div className="text-muted-foreground mb-4">Up to 1000 codes</div>
                     <ul className="text-sm text-left space-y-2">
-                      <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-green-500" /> Everything in $9</li>
-                      <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-green-500" /> Logo embedding</li>
-                      <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-green-500" /> Priority support</li>
+                      <li className="flex items-center gap-2"><BadgeCheck className="h-4 w-4 text-green-500" /> Everything in $9</li>
+                      <li className="flex items-center gap-2"><BadgeCheck className="h-4 w-4 text-green-500" /> Logo embedding</li>
+                      <li className="flex items-center gap-2"><BadgeCheck className="h-4 w-4 text-green-500" /> Priority support</li>
                     </ul>
                   </CardContent>
                 </Card>

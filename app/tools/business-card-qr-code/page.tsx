@@ -7,18 +7,16 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import { 
-  CreditCard, 
+  RectangleHorizontal, 
   ArrowRight, 
-  CheckCircle2, 
-  Sparkles,
-  Smartphone,
-  Users,
-  TrendingUp,
-  Zap,
-  Eye,
-  Download,
-  Printer,
-  Star
+  BadgeCheck, 
+  Wand2,
+  ScanLine,
+  Magnet,
+  ChartNoAxesCombined,
+  Fingerprint,
+  Scan,
+  CircleDot
 } from "lucide-react"
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://qr-generator.com'
@@ -47,22 +45,22 @@ export const metadata: Metadata = {
 
 const benefits = [
   {
-    icon: Zap,
+    icon: Fingerprint,
     title: "Instant Save",
     description: "Contacts save your info in one scan—no typing, no typos"
   },
   {
-    icon: TrendingUp,
+    icon: Magnet,
     title: "Better Retention",
     description: "Digital contacts stay in phones; paper cards often get lost"
   },
   {
-    icon: Eye,
+    icon: Scan,
     title: "Stand Out",
     description: "Modern, tech-savvy impression that differentiates you"
   },
   {
-    icon: Star,
+    icon: ChartNoAxesCombined,
     title: "Complete Info",
     description: "Include phone, email, website, LinkedIn, and more"
   },
@@ -136,7 +134,7 @@ export default function BusinessCardQRCode() {
           <div className="container relative mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <Badge className="mb-6 bg-slate-500/10 text-slate-600 border-slate-500/20 px-4 py-2">
-                <CreditCard className="h-4 w-4 mr-2" />
+                <RectangleHorizontal className="h-4 w-4 mr-2" />
                 Business Card QR Code
               </Badge>
               
@@ -155,7 +153,7 @@ export default function BusinessCardQRCode() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
                 <Button size="lg" className="h-14 px-8 text-lg gap-2" asChild>
                   <Link href="/#generator">
-                    <Sparkles className="h-5 w-5" />
+                    <Wand2 className="h-5 w-5" />
                     Create Card QR Code
                     <ArrowRight className="h-5 w-5" />
                   </Link>
@@ -164,15 +162,15 @@ export default function BusinessCardQRCode() {
               
               <div className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-green-500" />
+                  <BadgeCheck className="h-4 w-4 text-green-500" />
                   vCard Format
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-green-500" />
+                  <BadgeCheck className="h-4 w-4 text-green-500" />
                   SVG for Print
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-green-500" />
+                  <BadgeCheck className="h-4 w-4 text-green-500" />
                   100% Free
                 </div>
               </div>
@@ -291,7 +289,7 @@ export default function BusinessCardQRCode() {
               <div className="space-y-4">
                 {designTips.map((tip, i) => (
                   <div key={i} className="flex items-start gap-3 p-4 rounded-xl bg-muted/30 border border-border/50">
-                    <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                    <CircleDot className="h-5 w-5 text-slate-500 mt-0.5 flex-shrink-0" />
                     <p>{tip}</p>
                   </div>
                 ))}
@@ -309,9 +307,9 @@ export default function BusinessCardQRCode() {
               </h2>
               
               <div className="grid md:grid-cols-2 gap-8">
-                <Card className="border-green-500/30 bg-green-500/5">
+                <Card className="border-slate-500/30 bg-slate-500/5">
                   <CardContent className="p-6">
-                    <h3 className="font-semibold text-lg mb-4 text-green-600">✓ Essential Fields</h3>
+                    <h3 className="font-semibold text-lg mb-4 text-slate-600">Essential Fields</h3>
                     <ul className="space-y-2 text-sm">
                       <li>• Full name (as you want to appear in contacts)</li>
                       <li>• Primary phone number</li>
@@ -322,9 +320,9 @@ export default function BusinessCardQRCode() {
                   </CardContent>
                 </Card>
                 
-                <Card className="border-blue-500/30 bg-blue-500/5">
+                <Card className="border-slate-400/30 bg-slate-400/5">
                   <CardContent className="p-6">
-                    <h3 className="font-semibold text-lg mb-4 text-blue-600">+ Optional Fields</h3>
+                    <h3 className="font-semibold text-lg mb-4 text-slate-500">Optional Fields</h3>
                     <ul className="space-y-2 text-sm">
                       <li>• LinkedIn profile URL</li>
                       <li>• Company website</li>

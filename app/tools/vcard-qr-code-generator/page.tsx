@@ -7,19 +7,19 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import { 
-  User, 
+  Contact, 
   ArrowRight, 
-  CheckCircle2, 
-  Smartphone, 
-  Zap,
-  Building2,
-  Briefcase,
-  Globe,
-  Phone,
-  Mail,
-  Sparkles,
-  Users,
-  Star
+  BadgeCheck, 
+  ScanLine, 
+  Fingerprint,
+  Building,
+  BadgeDollarSign,
+  Link2,
+  PhoneCall,
+  AtSign,
+  Wand2,
+  Network,
+  Crown
 } from "lucide-react"
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://qr-generator.com'
@@ -48,34 +48,34 @@ export const metadata: Metadata = {
 
 const features = [
   {
-    icon: Zap,
+    icon: Fingerprint,
     title: "One-Scan Save",
     description: "Contacts save your info instantly—no typing required"
   },
   {
-    icon: Smartphone,
+    icon: ScanLine,
     title: "Works Everywhere",
     description: "Compatible with iPhone, Android, and all contact apps"
   },
   {
-    icon: Star,
+    icon: Crown,
     title: "Professional Image",
     description: "Modern tech-forward impression on every card"
   },
   {
-    icon: Users,
+    icon: Network,
     title: "Never Lost",
     description: "Digital contacts outlast paper cards that get thrown away"
   },
 ]
 
 const fieldsIncluded = [
-  { icon: User, label: "Full Name" },
-  { icon: Briefcase, label: "Job Title" },
-  { icon: Building2, label: "Company" },
-  { icon: Phone, label: "Phone Numbers" },
-  { icon: Mail, label: "Email Addresses" },
-  { icon: Globe, label: "Website & LinkedIn" },
+  { icon: Contact, label: "Full Name" },
+  { icon: BadgeDollarSign, label: "Job Title" },
+  { icon: Building, label: "Company" },
+  { icon: PhoneCall, label: "Phone Numbers" },
+  { icon: AtSign, label: "Email Addresses" },
+  { icon: Link2, label: "Website & LinkedIn" },
 ]
 
 
@@ -121,7 +121,7 @@ export default function VCardQRCodeGenerator() {
           <div className="container relative mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <Badge className="mb-6 bg-violet-500/10 text-violet-600 border-violet-500/20 px-4 py-2">
-                <User className="h-4 w-4 mr-2" />
+                <Contact className="h-4 w-4 mr-2" />
                 Free vCard QR Code Generator
               </Badge>
               
@@ -140,7 +140,7 @@ export default function VCardQRCodeGenerator() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
                 <Button size="lg" className="h-14 px-8 text-lg gap-2 bg-gradient-to-r from-violet-500 to-purple-500 hover:from-violet-600 hover:to-purple-600" asChild>
                   <Link href="/#generator">
-                    <Sparkles className="h-5 w-5" />
+                    <Wand2 className="h-5 w-5" />
                     Create vCard QR Code
                     <ArrowRight className="h-5 w-5" />
                   </Link>
@@ -149,15 +149,15 @@ export default function VCardQRCodeGenerator() {
               
               <div className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-green-500" />
+                  <BadgeCheck className="h-4 w-4 text-green-500" />
                   100% Free
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-green-500" />
+                  <BadgeCheck className="h-4 w-4 text-green-500" />
                   No Signup Required
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-green-500" />
+                  <BadgeCheck className="h-4 w-4 text-green-500" />
                   Print-Ready Quality
                 </div>
               </div>
@@ -264,7 +264,7 @@ export default function VCardQRCodeGenerator() {
                 <div className="bg-gradient-to-br from-violet-500/10 to-purple-500/10 rounded-2xl p-8 flex items-center justify-center">
                   <div className="text-center">
                     <div className="w-32 h-32 bg-white rounded-xl shadow-lg mx-auto mb-4 flex items-center justify-center">
-                      <User className="h-16 w-16 text-violet-500" />
+                      <Contact className="h-16 w-16 text-violet-500" />
                     </div>
                     <p className="text-sm text-muted-foreground">Your vCard QR Code</p>
                   </div>

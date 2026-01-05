@@ -7,19 +7,18 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import { 
-  Calendar, 
+  CalendarDays, 
   ArrowRight, 
-  CheckCircle2, 
-  Sparkles,
-  Users,
-  Ticket,
-  MapPin,
-  Clock,
-  Share2,
-  QrCode,
-  CalendarPlus,
-  Bell,
-  Gift
+  BadgeCheck, 
+  Wand2,
+  PartyPopper,
+  TicketCheck,
+  Compass,
+  Send,
+  Focus,
+  CalendarClock,
+  BellRing,
+  Cake
 } from "lucide-react"
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://qr-generator.com'
@@ -49,32 +48,32 @@ export const metadata: Metadata = {
 
 const useCases = [
   {
-    icon: Ticket,
+    icon: TicketCheck,
     title: "Ticket Validation",
     description: "Unique codes for each attendee for quick check-in scanning"
   },
   {
-    icon: CalendarPlus,
+    icon: CalendarClock,
     title: "Calendar Add",
     description: "Let guests add your event to their calendar with one scan"
   },
   {
-    icon: MapPin,
+    icon: Compass,
     title: "Venue Directions",
     description: "Link to Google/Apple Maps for easy navigation"
   },
   {
-    icon: Share2,
+    icon: Send,
     title: "Social Sharing",
     description: "Event hashtag, photo gallery, or social media links"
   },
   {
-    icon: Gift,
+    icon: Cake,
     title: "Wedding Registry",
     description: "Direct guests to your registry or event website"
   },
   {
-    icon: Bell,
+    icon: BellRing,
     title: "Updates & Info",
     description: "Link to schedule changes, speaker bios, or FAQs"
   },
@@ -132,7 +131,7 @@ export default function EventQRCodeGenerator() {
           <div className="container relative mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <Badge className="mb-6 bg-rose-500/10 text-rose-600 border-rose-500/20 px-4 py-2">
-                <Calendar className="h-4 w-4 mr-2" />
+                <CalendarDays className="h-4 w-4 mr-2" />
                 Event QR Code Generator
               </Badge>
               
@@ -151,7 +150,7 @@ export default function EventQRCodeGenerator() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
                 <Button size="lg" className="h-14 px-8 text-lg gap-2 bg-gradient-to-r from-rose-500 to-orange-500 hover:from-rose-600 hover:to-orange-600" asChild>
                   <Link href="/#generator">
-                    <Sparkles className="h-5 w-5" />
+                    <Wand2 className="h-5 w-5" />
                     Create Event QR Code
                     <ArrowRight className="h-5 w-5" />
                   </Link>
@@ -160,15 +159,15 @@ export default function EventQRCodeGenerator() {
               
               <div className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-green-500" />
+                  <BadgeCheck className="h-4 w-4 text-green-500" />
                   100% Free
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-green-500" />
+                  <BadgeCheck className="h-4 w-4 text-green-500" />
                   Print-Ready
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-green-500" />
+                  <BadgeCheck className="h-4 w-4 text-green-500" />
                   Unlimited Scans
                 </div>
               </div>
@@ -220,7 +219,7 @@ export default function EventQRCodeGenerator() {
                       <ul className="space-y-2">
                         {event.features.map((feature, fi) => (
                           <li key={fi} className="flex items-center gap-2 text-sm text-muted-foreground">
-                            <CheckCircle2 className="h-4 w-4 text-rose-500" />
+                            <BadgeCheck className="h-4 w-4 text-rose-500" />
                             {feature}
                           </li>
                         ))}
@@ -245,7 +244,7 @@ export default function EventQRCodeGenerator() {
                 {placementIdeas.map((item, i) => (
                   <div key={i} className="p-5 rounded-xl bg-card border border-border/50">
                     <div className="flex items-start gap-3">
-                      <QrCode className="h-5 w-5 text-rose-500 mt-0.5" />
+                      <Focus className="h-5 w-5 text-rose-500 mt-0.5" />
                       <div>
                         <h3 className="font-semibold mb-1">{item.location}</h3>
                         <p className="text-sm text-muted-foreground">{item.description}</p>
@@ -312,23 +311,23 @@ export default function EventQRCodeGenerator() {
               
               <div className="space-y-4">
                 <div className="flex items-start gap-3 p-4 rounded-xl bg-card border border-border/50">
-                  <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                  <PartyPopper className="h-5 w-5 text-rose-500 mt-0.5 flex-shrink-0" />
                   <p><strong>Test before printing</strong> — Scan every QR code on multiple devices before finalizing print materials.</p>
                 </div>
                 <div className="flex items-start gap-3 p-4 rounded-xl bg-card border border-border/50">
-                  <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                  <PartyPopper className="h-5 w-5 text-rose-500 mt-0.5 flex-shrink-0" />
                   <p><strong>Size for distance</strong> — For signs, use larger codes. Rule: QR size = scanning distance ÷ 10.</p>
                 </div>
                 <div className="flex items-start gap-3 p-4 rounded-xl bg-card border border-border/50">
-                  <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                  <PartyPopper className="h-5 w-5 text-rose-500 mt-0.5 flex-shrink-0" />
                   <p><strong>Add context</strong> — Include "Scan for..." text so guests know what they'll get.</p>
                 </div>
                 <div className="flex items-start gap-3 p-4 rounded-xl bg-card border border-border/50">
-                  <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                  <PartyPopper className="h-5 w-5 text-rose-500 mt-0.5 flex-shrink-0" />
                   <p><strong>Mobile-optimize destination</strong> — 95%+ of scans are from phones. Test on mobile.</p>
                 </div>
                 <div className="flex items-start gap-3 p-4 rounded-xl bg-card border border-border/50">
-                  <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                  <PartyPopper className="h-5 w-5 text-rose-500 mt-0.5 flex-shrink-0" />
                   <p><strong>Have a backup</strong> — For check-in, always have a manual lookup option ready.</p>
                 </div>
               </div>

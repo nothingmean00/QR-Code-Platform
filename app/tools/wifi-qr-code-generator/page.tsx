@@ -7,18 +7,18 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import { 
-  Wifi, 
+  Radio, 
   ArrowRight, 
-  CheckCircle2, 
-  Smartphone, 
-  Shield, 
-  Zap,
-  Users,
-  Building2,
-  Home,
-  Coffee,
-  Sparkles,
-  Clock
+  BadgeCheck, 
+  ScanLine, 
+  Lock, 
+  Bolt,
+  PartyPopper,
+  Landmark,
+  Sofa,
+  CupSoda,
+  Wand2,
+  Infinity
 } from "lucide-react"
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://qr-generator.com'
@@ -47,32 +47,32 @@ export const metadata: Metadata = {
 
 const benefits = [
   {
-    icon: Zap,
+    icon: Bolt,
     title: "Instant Connection",
     description: "Guests scan and connect in seconds—no typing complex passwords"
   },
   {
-    icon: Shield,
+    icon: Lock,
     title: "Secure Sharing",
     description: "Share access without revealing your password verbally"
   },
   {
-    icon: Smartphone,
+    icon: ScanLine,
     title: "Works Everywhere",
     description: "Compatible with iPhone, Android, and all modern smartphones"
   },
   {
-    icon: Clock,
+    icon: Infinity,
     title: "No Expiration",
     description: "Your QR code works forever—or until you change your password"
   },
 ]
 
 const useCases = [
-  { icon: Home, title: "Home", description: "Welcome guests without the password hassle" },
-  { icon: Building2, title: "Office", description: "Streamline visitor WiFi access" },
-  { icon: Coffee, title: "Cafe/Restaurant", description: "Delight customers with easy connectivity" },
-  { icon: Users, title: "Events", description: "Connect hundreds of attendees instantly" },
+  { icon: Sofa, title: "Home", description: "Welcome guests without the password hassle" },
+  { icon: Landmark, title: "Office", description: "Streamline visitor WiFi access" },
+  { icon: CupSoda, title: "Cafe/Restaurant", description: "Delight customers with easy connectivity" },
+  { icon: PartyPopper, title: "Events", description: "Connect hundreds of attendees instantly" },
 ]
 
 const steps = [
@@ -122,7 +122,7 @@ export default function WifiQRCodeGenerator() {
           <div className="container relative mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <Badge className="mb-6 bg-blue-500/10 text-blue-600 border-blue-500/20 px-4 py-2">
-                <Wifi className="h-4 w-4 mr-2" />
+                <Radio className="h-4 w-4 mr-2" />
                 Free WiFi QR Code Generator
               </Badge>
               
@@ -141,7 +141,7 @@ export default function WifiQRCodeGenerator() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
                 <Button size="lg" className="h-14 px-8 text-lg gap-2" asChild>
                   <Link href="/#generator">
-                    <Sparkles className="h-5 w-5" />
+                    <Wand2 className="h-5 w-5" />
                     Create WiFi QR Code
                     <ArrowRight className="h-5 w-5" />
                   </Link>
@@ -150,15 +150,15 @@ export default function WifiQRCodeGenerator() {
               
               <div className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-green-500" />
+                  <BadgeCheck className="h-4 w-4 text-green-500" />
                   100% Free
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-green-500" />
+                  <BadgeCheck className="h-4 w-4 text-green-500" />
                   No Signup Required
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-green-500" />
+                  <BadgeCheck className="h-4 w-4 text-green-500" />
                   Works Offline
                 </div>
               </div>
