@@ -6,6 +6,8 @@ import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, QrCode } from "lucide-react"
 
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://qr-generator.com'
+
 export const metadata: Metadata = {
   title: "QR Code Use Cases by Industry | QR Code Generator",
   description: "Discover how different industries use QR codes. From retail and restaurants to real estate and events—find the perfect QR code solution for your business.",
@@ -15,11 +17,30 @@ export const metadata: Metadata = {
     "QR code solutions",
     "business QR codes",
     "QR code examples",
+    "QR code applications",
   ],
+  alternates: {
+    canonical: `${BASE_URL}/use-cases`,
+  },
   openGraph: {
     title: "QR Code Use Cases by Industry",
     description: "Discover how different industries use QR codes to connect physical and digital experiences.",
     type: "website",
+    url: `${BASE_URL}/use-cases`,
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "QR Code Use Cases by Industry",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "QR Code Use Cases by Industry",
+    description: "Discover how different industries use QR codes to connect physical and digital experiences.",
+    images: ["/og-image.png"],
   },
 }
 

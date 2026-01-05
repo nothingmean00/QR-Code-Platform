@@ -43,21 +43,38 @@ export const metadata: Metadata = {
     "free QR code",
     "QR code maker",
     "create QR code",
+    "QR code creator",
+    "best QR code generator",
+    "professional QR codes",
   ],
   authors: [{ name: "QR Generator" }],
   creator: "QR Generator",
   publisher: "QR Generator",
+  alternates: {
+    canonical: BASE_URL,
+  },
   openGraph: {
     title: "QR Code Generator | Print-Safe, Professional QR Codes",
     description: "Generate high-quality, print-safe QR codes. Free downloads, no account required.",
     type: "website",
     siteName: "QR Generator",
     url: BASE_URL,
+    locale: "en_US",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "QR Code Generator - Create Professional QR Codes",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "QR Code Generator | Print-Safe, Professional QR Codes",
     description: "Generate high-quality, print-safe QR codes. Free downloads, no account required.",
+    images: ["/og-image.png"],
+    creator: "@qrgenerator",
   },
   robots: {
     index: true,
@@ -70,6 +87,7 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  manifest: "/manifest.json",
   icons: {
     icon: [
       {
@@ -87,6 +105,10 @@ export const metadata: Metadata = {
     ],
     apple: "/apple-icon.png",
   },
+  verification: {
+    google: "google-site-verification-code",
+  },
+  category: "technology",
 }
 
 export const viewport: Viewport = {

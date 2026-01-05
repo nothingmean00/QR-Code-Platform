@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import Script from "next/script"
 import { notFound } from "next/navigation"
 import { USE_CASES, getUseCaseBySlug, getAllUseCaseSlugs } from "@/lib/use-cases-data"
 import { Header } from "@/components/header"
@@ -19,6 +20,8 @@ import {
   Sparkles,
   ArrowLeft
 } from "lucide-react"
+
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://qr-generator.com'
 
 interface PageProps {
   params: Promise<{ slug: string }>
@@ -44,10 +47,28 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: `${useCase.title} | QR Code Generator`,
     description: useCase.metaDescription,
     keywords: useCase.keywords,
+    alternates: {
+      canonical: `${BASE_URL}/use-cases/${slug}`,
+    },
     openGraph: {
       title: useCase.title,
       description: useCase.metaDescription,
       type: "article",
+      url: `${BASE_URL}/use-cases/${slug}`,
+      images: [
+        {
+          url: "/og-image.png",
+          width: 1200,
+          height: 630,
+          alt: useCase.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: useCase.title,
+      description: useCase.metaDescription,
+      images: ["/og-image.png"],
     },
   }
 }
@@ -65,8 +86,68 @@ export default async function UseCasePage({ params }: PageProps) {
   // Find related use cases (exclude current)
   const relatedUseCases = USE_CASES.filter(uc => uc.slug !== slug).slice(0, 3)
 
+  // JSON-LD Structured Data
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${BASE_URL}/use-cases/${slug}`,
+        "url": `${BASE_URL}/use-cases/${slug}`,
+        "name": useCase.title,
+        "description": useCase.metaDescription,
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": `${BASE_URL}/#website`,
+          "url": BASE_URL,
+          "name": "QR Generator",
+        },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": BASE_URL,
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Use Cases",
+              "item": `${BASE_URL}/use-cases`,
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": useCase.shortTitle,
+              "item": `${BASE_URL}/use-cases/${slug}`,
+            },
+          ],
+        },
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": useCase.faqs.map(faq => ({
+          "@type": "Question",
+          "name": faq.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.answer,
+          },
+        })),
+      },
+    ],
+  }
+
   return (
-    <main className="min-h-screen bg-background">
+    <>
+      <Script
+        id="use-case-json-ld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <main className="min-h-screen bg-background">
       <Header />
 
       {/* Breadcrumb */}
@@ -297,6 +378,7 @@ export default async function UseCasePage({ params }: PageProps) {
       </section>
 
       <Footer />
-    </main>
+      </main>
+    </>
   )
 }
