@@ -8,40 +8,22 @@ import { Badge } from "@/components/ui/badge"
 
 const plans = [
   {
-    name: "Single",
+    name: "Single QR Code",
     price: "$4.99",
-    period: "per QR code",
-    description: "Perfect for one-off needs",
+    period: "per download",
+    description: "One professional QR code, all formats",
     icon: Zap,
     features: [
-      "1 QR Code",
-      "PNG & SVG Export",
-      "Print-safe quality (1024px)",
+      "High-res PNG (4096px)",
+      "SVG (vector, infinite scale)",
+      "PDF (print-ready)",
       "Level H error correction",
       "Custom colors",
       "Instant download",
     ],
-    cta: "Create QR Code",
-    highlighted: false,
-  },
-  {
-    name: "Pro Pack",
-    price: "$24.99",
-    period: "10 QR codes",
-    description: "Best value for growing businesses",
-    icon: Sparkles,
-    features: [
-      "10 QR Codes",
-      "PNG & SVG Export",
-      "High-res PNG (4096px)",
-      "PDF export (print-ready)",
-      "Custom colors",
-      "50% savings vs single",
-    ],
-    cta: "Get Pro Pack",
+    cta: "Create & Download",
     highlighted: true,
-    badge: "Best Value",
-    savings: "50%",
+    badge: "Most Popular",
   },
   {
     name: "Analytics",
@@ -50,11 +32,11 @@ const plans = [
     description: "Track scans & optimize campaigns",
     icon: Crown,
     features: [
-      "Unlimited QR edits",
+      "Unlimited QR codes",
       "Real-time scan tracking",
-      "Geographic data",
+      "Geographic insights",
       "Device & browser stats",
-      "Time-based analytics",
+      "Edit QR destinations",
       "Export reports",
     ],
     cta: "Start Tracking",
@@ -89,7 +71,7 @@ export function PricingSection() {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-5xl mx-auto">
+        <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 max-w-3xl mx-auto">
           {plans.map((plan, index) => (
             <Card
               key={plan.name}
@@ -179,32 +161,8 @@ export function PricingSection() {
           ))}
         </div>
 
-        {/* Bundle callout */}
-        <div className="mt-8 sm:mt-12 max-w-2xl mx-auto px-2">
-          <Card className="border-border/50 bg-card/60 backdrop-blur-sm overflow-hidden">
-            <CardContent className="p-4 sm:p-6 flex flex-col sm:flex-row items-center gap-3 sm:gap-4">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-chart-4/10 flex items-center justify-center flex-shrink-0">
-                <Crown className="h-5 w-5 sm:h-6 sm:w-6 text-chart-4" />
-              </div>
-              <div className="flex-1 text-center sm:text-left">
-                <h4 className="font-semibold text-sm sm:text-base mb-1">Need more? We have bundles.</h4>
-                <p className="text-xs sm:text-sm text-muted-foreground">
-                  Business Pack: 25 QR codes for $49.99 (60% savings)
-                </p>
-              </div>
-              <Button 
-                variant="outline" 
-                className="rounded-lg sm:rounded-xl whitespace-nowrap text-sm w-full sm:w-auto"
-                onClick={scrollToGenerator}
-              >
-                View All Packs
-              </Button>
-            </CardContent>
-          </Card>
-        </div>
-
-        <p className="text-center text-xs sm:text-sm text-muted-foreground mt-6 sm:mt-8">
-          Secure payments powered by Stripe. All prices in USD.
+        <p className="text-center text-xs sm:text-sm text-muted-foreground mt-8 sm:mt-12">
+          Secure payments powered by Stripe. All prices in USD. No account required.
         </p>
       </div>
     </section>
