@@ -111,11 +111,6 @@ export function PricingSection() {
                 <div className="mb-4 sm:mb-6">
                   <span className="text-3xl sm:text-4xl font-bold">{plan.price}</span>
                   <span className="text-muted-foreground text-sm ml-2">/{plan.period}</span>
-                  {plan.savings && (
-                    <Badge variant="secondary" className="ml-2 sm:ml-3 text-[10px] sm:text-xs bg-success/10 text-success border-success/20">
-                      Save {plan.savings}
-                    </Badge>
-                  )}
                 </div>
                 
                 {/* Features */}
