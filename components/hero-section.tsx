@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState, useRef } from "react"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { 
@@ -56,109 +57,145 @@ export function HeroSection() {
         className="absolute inset-0 -z-10 opacity-[0.02] dark:opacity-[0.04] dot-pattern text-foreground"
       />
 
-      <div className="container mx-auto px-4 py-12 sm:py-20 md:py-28 lg:py-32">
-        <div className="max-w-5xl mx-auto">
+      <div className="container mx-auto px-4 py-12 sm:py-16 md:py-20 lg:py-24">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center max-w-7xl mx-auto">
           
-          {/* Badge */}
-          <div className="flex justify-center mb-6 sm:mb-8 animate-fade-in-up">
-            <Badge 
-              variant="secondary" 
-              className="gap-2 px-3 sm:px-5 py-2 sm:py-2.5 text-xs sm:text-sm font-medium bg-primary/15 text-foreground border border-primary/25 rounded-full shadow-lg shadow-primary/5"
-            >
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-              </span>
-              <span className="tabular-nums font-semibold">{count.toLocaleString()}</span> QR codes created
-            </Badge>
-          </div>
-
-          {/* Main Headline */}
-          <div className="text-center mb-6 sm:mb-8 animate-fade-in-up stagger-1">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight leading-[1.1] sm:leading-[0.95] mb-4 sm:mb-6">
-              <span className="block text-foreground">Create QR codes</span>
-              <span className="block mt-1 sm:mt-2 text-gradient">
-                that actually work
-              </span>
-            </h1>
-          </div>
-
-          {/* Subheadline */}
-          <p className="text-center text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed px-2 animate-fade-in-up stagger-2">
-            Professional QR codes with 
-            <span className="text-foreground font-medium"> 30% damage tolerance</span>. 
-            Print them anywhere—they'll scan.
-          </p>
-
-          {/* CTA Section */}
-          <div className="flex flex-col items-center gap-4 sm:gap-6 mb-10 sm:mb-14 animate-fade-in-up stagger-3">
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto px-4 sm:px-0">
-              <Button 
-                size="lg" 
-                onClick={scrollToGenerator}
-                className="h-12 sm:h-14 px-6 sm:px-8 text-base sm:text-lg font-semibold gap-2 rounded-full shadow-2xl shadow-primary/25 hover:shadow-primary/40 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] bg-gradient-to-r from-primary to-primary/90 w-full sm:w-auto"
+          {/* Left side - Content */}
+          <div className="order-2 lg:order-1">
+            {/* Badge */}
+            <div className="flex justify-center lg:justify-start mb-6 animate-fade-in-up">
+              <Badge 
+                variant="secondary" 
+                className="gap-2 px-3 sm:px-5 py-2 sm:py-2.5 text-xs sm:text-sm font-medium bg-primary/15 text-foreground border border-primary/25 rounded-full shadow-lg shadow-primary/5"
               >
-                <Sparkles className="h-4 w-4 sm:h-5 sm:w-5" />
-                Create Your QR Code
-                <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5" />
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline"
-                onClick={scrollToGenerator}
-                className="h-12 sm:h-14 px-6 sm:px-8 text-base sm:text-lg font-medium gap-2 rounded-full border-2 hover:bg-muted/50 w-full sm:w-auto"
-              >
-                <QrCode className="h-4 w-4 sm:h-5 sm:w-5" />
-                See Examples
-              </Button>
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                </span>
+                <span className="tabular-nums font-semibold">{count.toLocaleString()}</span> QR codes created
+              </Badge>
             </div>
-            
-            {/* Trust indicators */}
-            <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 sm:gap-x-6 sm:gap-y-2 text-xs sm:text-sm text-muted-foreground">
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="h-4 w-4 text-success" />
-                <span>No signup required</span>
+
+            {/* Main Headline */}
+            <div className="text-center lg:text-left mb-6 animate-fade-in-up stagger-1">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.1] mb-4">
+                <span className="block text-foreground">Create QR codes</span>
+                <span className="block mt-1 text-gradient">
+                  that actually work
+                </span>
+              </h1>
+            </div>
+
+            {/* Subheadline */}
+            <p className="text-center lg:text-left text-base sm:text-lg md:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed animate-fade-in-up stagger-2">
+              Professional QR codes with 
+              <span className="text-foreground font-medium"> 30% damage tolerance</span>. 
+              Print them anywhere—they'll scan.
+            </p>
+
+            {/* CTA Section */}
+            <div className="flex flex-col items-center lg:items-start gap-4 sm:gap-5 mb-8 animate-fade-in-up stagger-3">
+              <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+                <Button 
+                  size="lg" 
+                  onClick={scrollToGenerator}
+                  className="h-12 sm:h-14 px-6 sm:px-8 text-base sm:text-lg font-semibold gap-2 rounded-full shadow-2xl shadow-primary/25 hover:shadow-primary/40 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] bg-gradient-to-r from-primary to-primary/90 w-full sm:w-auto"
+                >
+                  <Sparkles className="h-4 w-4 sm:h-5 sm:w-5" />
+                  Create Your QR Code
+                  <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5" />
+                </Button>
+                <Button 
+                  size="lg" 
+                  variant="outline"
+                  onClick={scrollToGenerator}
+                  className="h-12 sm:h-14 px-6 sm:px-8 text-base sm:text-lg font-medium gap-2 rounded-full border-2 hover:bg-muted/50 w-full sm:w-auto"
+                >
+                  <QrCode className="h-4 w-4 sm:h-5 sm:w-5" />
+                  See Examples
+                </Button>
               </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="h-4 w-4 text-success" />
-                <span>Instant download</span>
+              
+              {/* Trust indicators */}
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-x-5 gap-y-2 text-xs sm:text-sm text-muted-foreground">
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-success" />
+                  <span>No signup required</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-success" />
+                  <span>Instant download</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-success" />
+                  <span>Print-ready quality</span>
+                </div>
               </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="h-4 w-4 text-success" />
-                <span>Print-ready quality</span>
+            </div>
+
+            {/* Feature highlights */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 animate-fade-in-up stagger-4">
+              <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-card/60 border border-border/50 backdrop-blur-sm">
+                <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                  <Shield className="h-4 w-4 text-primary" />
+                </div>
+                <div>
+                  <p className="font-semibold text-foreground text-xs sm:text-sm">Level H Protection</p>
+                  <p className="text-[10px] sm:text-xs text-muted-foreground">30% error correction</p>
+                </div>
+              </div>
+              
+              <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-card/60 border border-border/50 backdrop-blur-sm">
+                <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                  <Zap className="h-4 w-4 text-primary" />
+                </div>
+                <div>
+                  <p className="font-semibold text-foreground text-xs sm:text-sm">Instant Generation</p>
+                  <p className="text-[10px] sm:text-xs text-muted-foreground">Real-time preview</p>
+                </div>
+              </div>
+              
+              <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-card/60 border border-border/50 backdrop-blur-sm">
+                <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                  <QrCode className="h-4 w-4 text-primary" />
+                </div>
+                <div>
+                  <p className="font-semibold text-foreground text-xs sm:text-sm">PNG & SVG</p>
+                  <p className="text-[10px] sm:text-xs text-muted-foreground">Vector for any size</p>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Feature highlights */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 max-w-3xl mx-auto animate-fade-in-up stagger-4 px-2 sm:px-0">
-            <div className="flex items-center gap-3 px-4 sm:px-5 py-3 sm:py-4 rounded-xl sm:rounded-2xl bg-card/60 border border-border/50 backdrop-blur-sm">
-              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-                <Shield className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
+          {/* Right side - Hero Image */}
+          <div className="order-1 lg:order-2 flex justify-center lg:justify-end animate-fade-in-up">
+            <div className="relative w-full max-w-md lg:max-w-lg xl:max-w-xl">
+              {/* Glow effect behind image */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-chart-2/20 rounded-3xl blur-3xl scale-110" />
+              
+              {/* Image container with styling */}
+              <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl shadow-black/10 border border-border/50 bg-card/30 backdrop-blur-sm">
+                <Image
+                  src="/hero-image.png"
+                  alt="Person scanning a QR code with smartphone - demonstrating easy QR code usage"
+                  width={600}
+                  height={500}
+                  className="w-full h-auto object-cover"
+                  priority
+                />
               </div>
-              <div>
-                <p className="font-semibold text-foreground text-xs sm:text-sm">Level H Protection</p>
-                <p className="text-[10px] sm:text-xs text-muted-foreground">30% error correction</p>
-              </div>
-            </div>
-            
-            <div className="flex items-center gap-3 px-4 sm:px-5 py-3 sm:py-4 rounded-xl sm:rounded-2xl bg-card/60 border border-border/50 backdrop-blur-sm">
-              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-                <Zap className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
-              </div>
-              <div>
-                <p className="font-semibold text-foreground text-xs sm:text-sm">Instant Generation</p>
-                <p className="text-[10px] sm:text-xs text-muted-foreground">Real-time preview</p>
-              </div>
-            </div>
-            
-            <div className="flex items-center gap-3 px-4 sm:px-5 py-3 sm:py-4 rounded-xl sm:rounded-2xl bg-card/60 border border-border/50 backdrop-blur-sm">
-              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-                <QrCode className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
-              </div>
-              <div>
-                <p className="font-semibold text-foreground text-xs sm:text-sm">PNG & SVG</p>
-                <p className="text-[10px] sm:text-xs text-muted-foreground">Vector for any size</p>
+              
+              {/* Floating badge on image */}
+              <div className="absolute -bottom-3 -left-3 sm:-bottom-4 sm:-left-4 bg-card border border-border rounded-xl sm:rounded-2xl px-3 sm:px-4 py-2 sm:py-3 shadow-lg animate-float">
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-success/10 flex items-center justify-center">
+                    <CheckCircle2 className="h-4 w-4 sm:h-5 sm:w-5 text-success" />
+                  </div>
+                  <div>
+                    <p className="text-xs sm:text-sm font-semibold text-foreground">Scan Success</p>
+                    <p className="text-[10px] sm:text-xs text-muted-foreground">Works every time</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
