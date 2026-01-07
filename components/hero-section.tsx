@@ -1,9 +1,8 @@
 "use client"
 
-import { useEffect, useState, useRef } from "react"
+import { useRef } from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
 import { 
   ArrowRight, 
   CheckCircle2, 
@@ -14,27 +13,7 @@ import {
 } from "lucide-react"
 
 export function HeroSection() {
-  const [count, setCount] = useState(0)
-  const targetCount = 847293
   const sectionRef = useRef<HTMLElement>(null)
-
-  // Animated counter
-  useEffect(() => {
-    const duration = 2000
-    const steps = 60
-    const increment = targetCount / steps
-    let current = 0
-    const timer = setInterval(() => {
-      current += increment
-      if (current >= targetCount) {
-        setCount(targetCount)
-        clearInterval(timer)
-      } else {
-        setCount(Math.floor(current))
-      }
-    }, duration / steps)
-    return () => clearInterval(timer)
-  }, [])
 
   const scrollToGenerator = () => {
     document.getElementById("generator")?.scrollIntoView({ behavior: "smooth" })
@@ -62,20 +41,6 @@ export function HeroSection() {
           
           {/* Left side - Content */}
           <div className="order-2 lg:order-1">
-            {/* Badge */}
-            <div className="flex justify-center lg:justify-start mb-6 animate-fade-in-up">
-              <Badge 
-                variant="secondary" 
-                className="gap-2 px-3 sm:px-5 py-2 sm:py-2.5 text-xs sm:text-sm font-medium bg-primary/15 text-foreground border border-primary/25 rounded-full shadow-lg shadow-primary/5"
-              >
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-                </span>
-                <span className="tabular-nums font-semibold">{count.toLocaleString()}</span> QR codes created
-              </Badge>
-            </div>
-
             {/* Main Headline */}
             <div className="text-center lg:text-left mb-6 animate-fade-in-up stagger-1">
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.1] mb-4">
