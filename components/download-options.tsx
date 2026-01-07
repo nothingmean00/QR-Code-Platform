@@ -79,7 +79,7 @@ export function DownloadOptions({ content, disabled }: DownloadOptionsProps) {
         {/* Stripe badge */}
         <div className="flex items-center justify-center gap-1.5 text-[10px] text-muted-foreground">
           <span>Powered by</span>
-          <span className="font-bold text-[11px]" style={{ color: '#635BFF' }}>stripe</span>
+          <span className="font-bold text-sm" style={{ color: '#635BFF' }}>stripe</span>
         </div>
       </div>
 
