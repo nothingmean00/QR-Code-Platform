@@ -13,6 +13,11 @@ const toolSlugs = [
   'qr-code-templates',
   'business-card-qr-code',
   'event-qr-code-generator',
+  'free-qr-code-generator',
+  'qr-code-with-logo',
+  'whatsapp-qr-code-generator',
+  'social-media-qr-code',
+  'location-qr-code-generator',
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {
