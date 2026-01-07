@@ -1,18 +1,21 @@
 "use client"
 
+import { useRef } from "react"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { RotateCcw, Pipette } from "lucide-react"
+import { RotateCcw, Pipette, ImagePlus, X } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 interface QRCustomizationProps {
   fgColor: string
   bgColor: string
+  logo: string | null
   onFgColorChange: (color: string) => void
   onBgColorChange: (color: string) => void
+  onLogoChange: (logo: string | null) => void
 }
 
 const PRESET_COLORS = [
@@ -45,16 +48,34 @@ const SINGLE_COLORS = [
   "#ffe4e1",
 ]
 
-export function QRCustomization({ fgColor, bgColor, onFgColorChange, onBgColorChange }: QRCustomizationProps) {
+export function QRCustomization({ fgColor, bgColor, logo, onFgColorChange, onBgColorChange, onLogoChange }: QRCustomizationProps) {
+  const fileInputRef = useRef<HTMLInputElement>(null)
+
   const reset = () => {
     onFgColorChange("#000000")
     onBgColorChange("#ffffff")
+    onLogoChange(null)
   }
 
   const swapColors = () => {
     const temp = fgColor
     onFgColorChange(bgColor)
     onBgColorChange(temp)
+  }
+
+  const handleLogoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0]
+    if (file) {
+      if (file.size > 2 * 1024 * 1024) {
+        alert("Logo must be under 2MB")
+        return
+      }
+      const reader = new FileReader()
+      reader.onloadend = () => {
+        onLogoChange(reader.result as string)
+      }
+      reader.readAsDataURL(file)
+    }
   }
 
   return (
@@ -64,8 +85,9 @@ export function QRCustomization({ fgColor, bgColor, onFgColorChange, onBgColorCh
           <div className="flex items-center gap-1">
             <div className="w-3 h-3 rounded-sm border border-border" style={{ backgroundColor: fgColor }} />
             <div className="w-3 h-3 rounded-sm border border-border" style={{ backgroundColor: bgColor }} />
+            {logo && <ImagePlus className="h-3 w-3 text-primary" />}
           </div>
-          Colors
+          {logo ? "Colors + Logo" : "Colors"}
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-80" align="end">
@@ -91,6 +113,9 @@ export function QRCustomization({ fgColor, bgColor, onFgColorChange, onBgColorCh
               </TabsTrigger>
               <TabsTrigger value="custom" className="flex-1 text-xs">
                 Custom
+              </TabsTrigger>
+              <TabsTrigger value="logo" className="flex-1 text-xs">
+                Logo
               </TabsTrigger>
             </TabsList>
 
@@ -192,6 +217,69 @@ export function QRCustomization({ fgColor, bgColor, onFgColorChange, onBgColorCh
               <p className="text-[10px] text-muted-foreground">
                 Tip: Maintain high contrast between foreground and background for reliable scanning.
               </p>
+            </TabsContent>
+
+            <TabsContent value="logo" className="mt-3 space-y-4">
+              <div className="space-y-3">
+                <Label className="text-xs">Upload Logo</Label>
+                <p className="text-[10px] text-muted-foreground">
+                  Add your logo to the center of the QR code. Works best with square images.
+                </p>
+                
+                <input
+                  ref={fileInputRef}
+                  type="file"
+                  accept="image/png,image/jpeg,image/svg+xml,image/webp"
+                  onChange={handleLogoUpload}
+                  className="hidden"
+                />
+                
+                {logo ? (
+                  <div className="relative">
+                    <div className="w-full aspect-square max-w-[120px] mx-auto rounded-lg border border-border overflow-hidden bg-muted">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img 
+                        src={logo} 
+                        alt="Logo preview" 
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                    <Button
+                      variant="destructive"
+                      size="sm"
+                      onClick={() => onLogoChange(null)}
+                      className="absolute -top-2 -right-2 h-6 w-6 p-0 rounded-full"
+                    >
+                      <X className="h-3 w-3" />
+                    </Button>
+                  </div>
+                ) : (
+                  <Button
+                    variant="outline"
+                    className="w-full h-24 flex flex-col gap-2"
+                    onClick={() => fileInputRef.current?.click()}
+                  >
+                    <ImagePlus className="h-6 w-6 text-muted-foreground" />
+                    <span className="text-xs text-muted-foreground">Click to upload logo</span>
+                  </Button>
+                )}
+
+                {logo && (
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="w-full text-xs"
+                    onClick={() => fileInputRef.current?.click()}
+                  >
+                    <ImagePlus className="h-3 w-3 mr-2" />
+                    Change Logo
+                  </Button>
+                )}
+
+                <p className="text-[10px] text-muted-foreground">
+                  PNG, JPG, SVG, or WebP. Max 2MB. Logo covers up to 20% of QR — still scannable thanks to Level H error correction.
+                </p>
+              </div>
             </TabsContent>
           </Tabs>
         </div>

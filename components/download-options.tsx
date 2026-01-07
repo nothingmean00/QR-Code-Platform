@@ -11,6 +11,7 @@ interface DownloadOptionsProps {
   disabled?: boolean
   fgColor?: string
   bgColor?: string
+  logo?: string | null
   onDownload?: () => void
 }
 

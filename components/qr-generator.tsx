@@ -20,6 +20,7 @@ export function QRGenerator() {
   const [payload, setPayload] = useState<QRPayload>(getDefaultPayload("url"))
   const [fgColor, setFgColor] = useState("#000000")
   const [bgColor, setBgColor] = useState("#ffffff")
+  const [logo, setLogo] = useState<string | null>(null)
 
   const { addToHistory } = useQRHistory()
 
@@ -102,8 +103,10 @@ export function QRGenerator() {
               <QRCustomization
                 fgColor={fgColor}
                 bgColor={bgColor}
+                logo={logo}
                 onFgColorChange={setFgColor}
                 onBgColorChange={setBgColor}
+                onLogoChange={setLogo}
               />
             </div>
 
@@ -119,7 +122,7 @@ export function QRGenerator() {
             {/* QR Preview Card - Mobile only */}
             <Card className="lg:hidden overflow-hidden border-border/50 shadow-xl shadow-black/5">
               <CardContent className="p-4 sm:p-6">
-                <QRPreview content={qrContent} size={280} fgColor={fgColor} bgColor={bgColor} />
+                <QRPreview content={qrContent} size={280} fgColor={fgColor} bgColor={bgColor} logo={logo} />
 
                 {hasContent && (
                   <div className="flex items-center justify-center gap-2 flex-wrap mt-4 pt-4 border-t border-border/50">
@@ -146,7 +149,7 @@ export function QRGenerator() {
                 )}
 
                 <div className="mt-4 sm:mt-6">
-                  <DownloadOptions content={qrContent} disabled={!hasContent} fgColor={fgColor} bgColor={bgColor} onDownload={handleDownload} />
+                  <DownloadOptions content={qrContent} disabled={!hasContent} fgColor={fgColor} bgColor={bgColor} logo={logo} onDownload={handleDownload} />
                 </div>
               </CardContent>
             </Card>
@@ -156,7 +159,7 @@ export function QRGenerator() {
           <div className="hidden lg:block lg:sticky lg:top-24 lg:self-start space-y-6">
             <Card className="overflow-hidden border-border/50 shadow-xl shadow-black/5">
               <CardContent className="p-6 md:p-8">
-                <QRPreview content={qrContent} size={340} fgColor={fgColor} bgColor={bgColor} />
+                <QRPreview content={qrContent} size={340} fgColor={fgColor} bgColor={bgColor} logo={logo} />
 
                 {hasContent && (
                   <div className="flex items-center justify-center gap-2 flex-wrap mt-6 pt-6 border-t border-border/50">
@@ -183,7 +186,7 @@ export function QRGenerator() {
                 )}
 
                 <div className="mt-6">
-                  <DownloadOptions content={qrContent} disabled={!hasContent} fgColor={fgColor} bgColor={bgColor} onDownload={handleDownload} />
+                  <DownloadOptions content={qrContent} disabled={!hasContent} fgColor={fgColor} bgColor={bgColor} logo={logo} onDownload={handleDownload} />
                 </div>
               </CardContent>
             </Card>

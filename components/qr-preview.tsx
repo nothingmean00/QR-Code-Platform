@@ -12,6 +12,7 @@ interface QRPreviewProps {
   className?: string
   fgColor?: string
   bgColor?: string
+  logo?: string | null
 }
 
 export function QRPreview({
@@ -20,6 +21,7 @@ export function QRPreview({
   className,
   fgColor = "#000000",
   bgColor = "#ffffff",
+  logo = null,
 }: QRPreviewProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const [error, setError] = useState<string | null>(null)
@@ -72,6 +74,28 @@ export function QRPreview({
       errorCorrectionLevel: "H",
     })
       .then(() => {
+        // Draw logo if provided
+        if (logo) {
+          const ctx = canvas.getContext("2d")
+          if (ctx) {
+            const img = new Image()
+            img.onload = () => {
+              // Logo size is 20% of QR code
+              const logoSize = size * 0.2
+              const x = (size - logoSize) / 2
+              const y = (size - logoSize) / 2
+              
+              // Draw white background for logo (with slight padding)
+              const padding = logoSize * 0.1
+              ctx.fillStyle = bgColor
+              ctx.fillRect(x - padding, y - padding, logoSize + padding * 2, logoSize + padding * 2)
+              
+              // Draw the logo
+              ctx.drawImage(img, x, y, logoSize, logoSize)
+            }
+            img.src = logo
+          }
+        }
         setError(null)
         setLoading(false)
       })
@@ -79,7 +103,7 @@ export function QRPreview({
         setError("Content too long for QR code")
         setLoading(false)
       })
-  }, [content, size, fgColor, bgColor])
+  }, [content, size, fgColor, bgColor, logo])
 
   const handleZoomIn = () => setZoom((z) => Math.min(z + 0.25, 2))
   const handleZoomOut = () => setZoom((z) => Math.max(z - 0.25, 0.5))
@@ -150,10 +174,11 @@ export async function generateQRDataURL(
   size = 1024,
   fgColor = "#000000",
   bgColor = "#ffffff",
+  logo: string | null = null,
 ): Promise<string> {
   if (!content) throw new Error("No content provided")
 
-  return QRCodeLib.toDataURL(content, {
+  const dataURL = await QRCodeLib.toDataURL(content, {
     width: size,
     margin: 2,
     color: {
@@ -162,12 +187,58 @@ export async function generateQRDataURL(
     },
     errorCorrectionLevel: "H",
   })
+
+  // If no logo, return the basic QR code
+  if (!logo) return dataURL
+
+  // Draw logo on top of QR code using canvas
+  return new Promise((resolve, reject) => {
+    const canvas = document.createElement("canvas")
+    canvas.width = size
+    canvas.height = size
+    const ctx = canvas.getContext("2d")
+    if (!ctx) {
+      reject(new Error("Could not get canvas context"))
+      return
+    }
+
+    const qrImg = new Image()
+    qrImg.onload = () => {
+      ctx.drawImage(qrImg, 0, 0, size, size)
+
+      const logoImg = new Image()
+      logoImg.onload = () => {
+        const logoSize = size * 0.2
+        const x = (size - logoSize) / 2
+        const y = (size - logoSize) / 2
+        
+        // Draw background for logo
+        const padding = logoSize * 0.1
+        ctx.fillStyle = bgColor
+        ctx.fillRect(x - padding, y - padding, logoSize + padding * 2, logoSize + padding * 2)
+        
+        // Draw logo
+        ctx.drawImage(logoImg, x, y, logoSize, logoSize)
+        
+        resolve(canvas.toDataURL("image/png"))
+      }
+      logoImg.onerror = () => reject(new Error("Failed to load logo"))
+      logoImg.src = logo
+    }
+    qrImg.onerror = () => reject(new Error("Failed to load QR code"))
+    qrImg.src = dataURL
+  })
 }
 
-export async function generateQRSVG(content: string, fgColor = "#000000", bgColor = "#ffffff"): Promise<string> {
+export async function generateQRSVG(
+  content: string, 
+  fgColor = "#000000", 
+  bgColor = "#ffffff",
+  logo: string | null = null,
+): Promise<string> {
   if (!content) throw new Error("No content provided")
 
-  return QRCodeLib.toString(content, {
+  let svg = await QRCodeLib.toString(content, {
     type: "svg",
     margin: 2,
     color: {
@@ -176,4 +247,26 @@ export async function generateQRSVG(content: string, fgColor = "#000000", bgColo
     },
     errorCorrectionLevel: "H",
   })
+
+  // If logo, embed it in the SVG
+  if (logo) {
+    // Parse SVG to get dimensions
+    const viewBoxMatch = svg.match(/viewBox="0 0 (\d+) (\d+)"/)
+    if (viewBoxMatch) {
+      const size = parseInt(viewBoxMatch[1])
+      const logoSize = size * 0.2
+      const x = (size - logoSize) / 2
+      const y = (size - logoSize) / 2
+      const padding = logoSize * 0.1
+
+      // Insert logo before closing </svg>
+      const logoSVG = `
+        <rect x="${x - padding}" y="${y - padding}" width="${logoSize + padding * 2}" height="${logoSize + padding * 2}" fill="${bgColor}"/>
+        <image x="${x}" y="${y}" width="${logoSize}" height="${logoSize}" href="${logo}" preserveAspectRatio="xMidYMid meet"/>
+      `
+      svg = svg.replace("</svg>", `${logoSVG}</svg>`)
+    }
+  }
+
+  return svg
 }
