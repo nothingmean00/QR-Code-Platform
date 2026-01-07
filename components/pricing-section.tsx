@@ -174,7 +174,7 @@ export function PricingSection() {
           </div>
           <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
             <span>Powered by</span>
-            <span className="font-semibold">Stripe</span>
+            <span className="font-bold" style={{ color: '#635BFF' }}>stripe</span>
           </div>
         </div>
       </div>
