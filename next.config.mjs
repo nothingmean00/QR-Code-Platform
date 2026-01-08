@@ -7,6 +7,16 @@ const nextConfig = {
   //     { protocol: 'https', hostname: 'example.com' },
   //   ],
   // },
+  
+  // Redirect /favicon.ico to /icon.ico for Google favicon compatibility
+  async rewrites() {
+    return [
+      {
+        source: '/favicon.ico',
+        destination: '/icon.ico',
+      },
+    ]
+  },
 }
 
 export default nextConfig
