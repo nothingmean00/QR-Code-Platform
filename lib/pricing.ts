@@ -5,8 +5,8 @@ export interface PricingTier {
   description: string
 }
 
-export const SINGLE_DOWNLOAD_PRICE = 4.97
-export const ORIGINAL_PRICE = 9.99
+export const SINGLE_DOWNLOAD_PRICE = 1.00
+export const ORIGINAL_PRICE = 4.97
 
 export const PRICING_TIERS: PricingTier[] = [
   {
