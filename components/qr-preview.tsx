@@ -156,12 +156,13 @@ export function QRPreview({
           {content && !error && (
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
               <div 
-                className="text-2xl font-bold tracking-widest opacity-30 select-none"
+                className="text-3xl font-black tracking-wider select-none"
                 style={{ 
                   transform: 'rotate(-45deg)',
-                  color: fgColor,
-                  textShadow: `0 0 10px ${bgColor}, 0 0 20px ${bgColor}, 0 0 30px ${bgColor}`,
-                  letterSpacing: '0.2em'
+                  color: '#FF0000',
+                  textShadow: '2px 2px 0 #fff, -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, 0 0 10px rgba(255,0,0,0.5)',
+                  letterSpacing: '0.15em',
+                  opacity: 0.85
                 }}
               >
                 PREVIEW
