@@ -153,8 +153,15 @@ export interface EventPayload {
 
 export function generateQRContent(type: QRType, payload: QRPayload): string {
   switch (type) {
-    case "url":
-      return (payload as URLPayload).url || ""
+    case "url": {
+      const url = (payload as URLPayload).url || ""
+      if (!url) return ""
+      // Auto-add https:// if missing
+      if (url && !url.startsWith('http://') && !url.startsWith('https://')) {
+        return `https://${url}`
+      }
+      return url
+    }
 
     case "wifi": {
       const wifi = payload as WiFiPayload

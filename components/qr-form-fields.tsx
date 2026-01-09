@@ -8,7 +8,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { isValidUrl, isValidEmail, isValidPhone, cn } from "@/lib/utils"
+import { isValidEmail, isValidPhone, cn } from "@/lib/utils"
 import type {
   QRType,
   QRPayload,
@@ -84,23 +84,18 @@ function FormHint({ children }: { children: React.ReactNode }) {
 }
 
 function URLForm({ payload, onChange }: { payload: URLPayload; onChange: (p: QRPayload) => void }) {
-  const isValid = isValidUrl(payload.url)
   return (
     <FormField>
       <Label htmlFor="url">Website URL</Label>
       <Input
         id="url"
-        type="url"
-        placeholder="https://example.com"
+        type="text"
+        placeholder="example.com"
         value={payload.url}
         onChange={(e) => onChange({ ...payload, url: e.target.value })}
-        className={cn("h-11", !isValid && "border-destructive focus-visible:ring-destructive")}
+        className="h-11"
       />
-      {!isValid ? (
-        <p className="text-xs text-destructive">Please enter a valid URL starting with http:// or https://</p>
-      ) : (
-        <FormHint>Enter the full URL including https://</FormHint>
-      )}
+      <FormHint>Enter any URL (https:// will be added automatically)</FormHint>
     </FormField>
   )
 }
