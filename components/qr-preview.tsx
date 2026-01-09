@@ -143,7 +143,7 @@ export function QRPreview({
           </div>
         )}
         <div
-          className="transition-transform duration-200 ease-out"
+          className="transition-transform duration-200 ease-out relative"
           style={{ transform: `scale(${zoom})`, transformOrigin: "center center" }}
         >
           <canvas
@@ -152,6 +152,22 @@ export function QRPreview({
             height={size}
             className={cn("rounded-lg transition-opacity duration-200", loading && "opacity-50")}
           />
+          {/* Watermark overlay */}
+          {content && !error && (
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <div 
+                className="text-2xl font-bold tracking-widest opacity-30 select-none"
+                style={{ 
+                  transform: 'rotate(-45deg)',
+                  color: fgColor,
+                  textShadow: `0 0 10px ${bgColor}, 0 0 20px ${bgColor}, 0 0 30px ${bgColor}`,
+                  letterSpacing: '0.2em'
+                }}
+              >
+                PREVIEW
+              </div>
+            </div>
+          )}
         </div>
         {error && (
           <div className="absolute inset-0 flex items-center justify-center bg-card/95 rounded-2xl">
