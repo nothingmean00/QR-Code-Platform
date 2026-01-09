@@ -21,7 +21,7 @@ export const PRODUCTS = {
   QR_DOWNLOAD: {
     name: 'QR Code Download',
     description: 'High-resolution QR code in PNG (4096px), SVG, and PDF formats',
-    price: 100, // $1.00 in cents (testing)
+    price: 497, // $4.97 in cents
   },
   ANALYTICS_SUBSCRIPTION: {
     name: 'QR Analytics',
